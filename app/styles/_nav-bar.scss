@@ -1,0 +1,62 @@
+/*Navigation*/
+/*Breakpoint is 1300px*/
+.nav-bar {
+  position: absolute;
+  top: 100%;
+  background-color: #000;
+  z-index: 20;
+}
+
+.nav-bar a {
+  display: block;
+  width: 100px;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.nav-bar a:hover, .nav-bar a.active {
+  background-color: $lime-green;
+}
+
+.sprite {
+  display: block;
+  background-image: url('imgs/spritesheet.png');
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  width: 32px;
+  height: 32px;
+}
+
+.skill-icon {
+  display: block;
+  background-image: url('imgs/skills.png');
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  width: 32px;
+  height: 32px;
+}
+
+.education-icon {
+  background-position: -5px -5px;
+}
+
+.project-icon {
+  background-position: -47px -5px;
+}
+
+.contact-icon {
+  background-position: -5px -47px;
+}
+
+.about-icon {
+  background-position: -47px -47px;
+}
+
+.work-icon {
+  background-position: -89px -5px;
+}

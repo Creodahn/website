@@ -1,0 +1,73 @@
+/*Title Card*/
+.title-card, .name, .title {
+  display: flex;
+}
+
+.title-card {
+  position: relative;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $light-orange;
+  background-image: radial-gradient(circle closest-side, #fff, $light-orange);
+}
+
+.name, .title {
+  flex: 1;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.name {
+  padding: 20px;
+}
+
+.name h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 20px;
+  align-self: flex-end;
+  border-bottom: 2px inset $vivid-yellow;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+/*Arrow*/
+.scroll-arrow {
+  position: absolute;
+  bottom: 0px;
+  height: 20px;
+  width: 100px;
+}
+
+.arrow {
+  height: 0px;
+  margin-top: -25px;
+  cursor: pointer;
+  @include animation(animation 2000ms linear infinite both);
+}
+
+.arrow:after, .arrow:before {
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+
+.arrow:after {
+	border-top-color: $vivid-yellow;
+	border-width: 30px;
+	margin-left: -30px;
+}
+
+.arrow:before {
+	border-top-color: $dark-vivid-yellow;
+	border-width: 36px;
+	margin-left: -36px;
+}

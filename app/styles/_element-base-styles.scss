@@ -1,0 +1,40 @@
+a, a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100%;
+  background-color: transparent;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+}
+
+button {
+  @include user-select(none);
+}
+
+button:focus {
+  outline: none;
+}
+
+html {
+  font-size: $base-font-size;
+  background-color: $off-white;
+}
+
+main {
+  transition: 0.3s filter;
+}
+
+main.de-emphasize {
+  @include filter(blur(5px));
+}
+
+section {
+  @include font-size($base-font-size);
+}

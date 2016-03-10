@@ -1,0 +1,67 @@
+/*Buttons*/
+.button {
+  position: relative;
+  height: 30px;
+  width: 250px;
+  border: 1px solid #000;
+  line-height: 30px;
+  margin: 15px auto;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
+  background-color: $vivid-yellow;
+}
+
+.linkedin-button {
+  background-image: url('../imgs/linkedin-icon.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 43px 34px;
+}
+
+.email-button {
+  background-image: url('../imgs/email.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+}
+
+.button:hover {
+  color: #25a0da;
+}
+
+.button:active {
+  color: #000;
+  background-color: $strong-yellow;
+}
+
+.close-button {
+  font-family: 'Noto Sans', sans-serif;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: $bright-red;
+  color: #fff;
+  border: 5px solid #fff;
+  font-size: 40px;
+  font-weight: bold;
+  width: 60px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 60px;
+  @include box-shadow(0px 0px 7px rgba(0, 0, 0, 0.3));
+  text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.3s;
+  @include user-select(none);
+}
+
+.close-button:hover {
+  @include transform(scale(1.1));
+}
+
+.close-button:active {
+  @include transform(scale(0.95));
+  background-color: $strong-red;
+}

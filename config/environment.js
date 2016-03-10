@@ -19,6 +19,15 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.contentSecurityPolicy = {
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+    'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+    'connect-src': "'self'",
+    'img-src': "'self' data:",
+    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+    'media-src': "'self'"
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

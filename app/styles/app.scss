@@ -1,0 +1,26 @@
+/*Variables*/
+$base-font-size: 16px;
+$link-color: #337ab7;
+$shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.4);
+
+/*Colors*/
+$off-white: #faf8f2;
+$lime-green: #18a676;
+$light-orange: #f7eac8;
+$vivid-yellow: #e8b71a;
+$dark-vivid-yellow: #d9aa16;
+$strong-yellow: #b58e12;
+$bright-red: #db3340;
+$strong-red: #b3202b;
+$bright-blue: #28abe3;
+$brighter-blue: #25a0da;
+
+/*Imports*/
+@import '_functions';
+@import '_mixins';
+@import 'animations';
+@import 'buttons';
+@import 'element-base-styles';
+@import 'layout';
+@import 'nav-bar';
+@import 'title-card';

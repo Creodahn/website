@@ -1,0 +1,95 @@
+/*Mixins*/
+@mixin animation($anim) {
+	-webkit-animation: $anim;
+	-moz-animation: $anim;
+	-o-animation: $anim;
+	animation: $anim;
+}
+
+@mixin appearance($option) {
+	-webkit-appearance: $option;
+	-moz-appearance: $option;
+	appearance: $option;
+}
+
+@mixin background-size($size) {
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	background-size: $size;
+}
+
+@mixin filter($filter) {
+  -webkit-filter: $filter;
+  filter: $filter;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($shadows...) {
+	-webkit-box-shadow: $shadows;
+	-moz-box-shadow: $shadows;
+	box-shadow: $shadows;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content
+	}
+
+	@-moz-keyframes #{$animation-name} {
+		@content
+	}
+
+	@-ms-keyframes #{$animation-name} {
+		@content
+	}
+
+	@-o-keyframes #{$animation-name} {
+		@content
+	}
+
+	@keyframes #{$animation-name} {
+		@content
+	}
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+  -ms-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition-length($length) {
+	-webkit-transition: $length;
+	-moz-transition: $length;
+	-o-transition: $length;
+	transition: $length;
+}
+
+@mixin user-select($option) {
+	-webkit-touch-callout: $option;
+	-webkit-user-select: $option;
+	-khtml-user-select: $option;
+	-moz-user-select: $option;
+	-ms-user-select: $option;
+	user-select: $option;
+}
+
+@mixin white-space() {
+	white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+}
