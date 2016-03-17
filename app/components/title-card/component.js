@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'section',
-  classNames: ['content-section', 'title-card']
+  tagName: 'main',
+  actions: {
+    scrollTitle: function() {
+      $('.title-card').removeClass('content-section').removeClass('title-card');
+    }
+  }
 });

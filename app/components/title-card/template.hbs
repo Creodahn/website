@@ -1,37 +1,11 @@
-<header class="name">
-  <h1>justin drew</h1>
-</header>
-<footer class="title">
-  <div>full stack developer</div>
-</footer>
+<section class="content-section title-card">
+  <header class="name">
+    <h1>justin drew</h1>
+  </header>
+  <footer class="title">
+    <div>full stack developer</div>
+  </footer>
+  <button {{action "scrollTitle"}}>Continue</button>
+</section>
 
-<a href="#about-me" class="scroll-arrow">
-  <div class="arrow">
-  </div>
-</a>
-<nav class="nav-bar">
-  <a href='#about-me'>
-    <span class="sprite about-icon"></span>
-    About Me
-  </a>
-  <a href="#education">
-    <span class="sprite education-icon"></span>
-    Education
-  </a>
-  <a href="#skills">
-    <span class="skill-icon"></span>
-    Skills
-  </a>
-  <a href="#work-experience">
-    <span class="sprite work-icon"></span>
-    Work Experience
-  </a>
-  <a href="#projects">
-    <span class="sprite project-icon"></span>
-    Projects
-  </a>
-  <a href="#contact-me">
-    <span class="sprite contact-icon"></span>
-    Contact Me
-  </a>
-</nav>
+{{yield}}
