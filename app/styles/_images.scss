@@ -8,3 +8,65 @@ $border-radius: '250px / 40px';
   overflow: hidden;
   width: 200px;
 }
+
+.photo-stack {
+  &:hover {
+    &:after {
+      @include transform(rotate(6deg));
+    }
+
+    &:before {
+      @include transform(rotate(-7deg));
+    }
+  }
+
+  &:after,
+  &:before,
+  img {
+    border: 6px solid #fff;
+    cursor: pointer;
+  }
+
+  &:after,
+  &:before {
+    @include box-shadow(2px 2px 5px rgba(0, 0, 0, .3));
+    @include transition(.3s);
+    content: '';
+    height: 200px;
+    position: absolute;
+    width: 200px;
+    z-index: -1;
+  }
+
+  &:after {
+    @include transform(rotate(4deg));
+    background: #768590;
+    content: '';
+    left: 0;
+    top: 5px;
+  }
+
+  &:before {
+    @include transform(rotate(-5deg));
+    background: #eff4de;
+    left: -10px;
+    top: 0;
+  }
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+
+  @include box-shadow(2px 2px 5px rgba(0, 0, 0, .3));
+  @include transition(.3s);
+  background-color: #fff;
+  border: 6px solid #fff;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 200px;
+  margin: 50px;
+  position: relative;
+  width: 200px;
+  z-index: 500;
+}

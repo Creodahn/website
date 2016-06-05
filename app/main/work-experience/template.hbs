@@ -1,3 +1,5 @@
-{{work-experience
-  model=sortedWork
-}}
+{{#each sortedWork as |experience|}}
+  {{work-experience
+    model=experience
+  }}
+{{/each}}

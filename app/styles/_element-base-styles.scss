@@ -21,10 +21,8 @@ body {
 }
 
 button {
-  &.btn {
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
   }
 
   @include user-select(none);

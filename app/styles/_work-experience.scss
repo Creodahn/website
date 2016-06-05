@@ -1,0 +1,14 @@
+.work-experience {
+  .sub-title {
+    margin-left: 15px;
+  }
+
+  .title {
+    @include font-size(22px);
+  }
+
+  @include box-shadow($shadow);
+  background-color: $light-orange;
+  margin-bottom: 25px;
+  padding: 20px;
+}

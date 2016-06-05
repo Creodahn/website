@@ -1,1 +1,10 @@
-{{yield}}
+<button type="button" class="photo-stack" data-toggle="modal" data-target={{dataTarget}}>
+  <img src={{firstImage.url}}/>
+</button>
+
+{{#modal-window modal-id=modal-id}}
+  {{image-carousel
+    carousel-id=carouselId
+    model=model
+  }}
+{{/modal-window}}

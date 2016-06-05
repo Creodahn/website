@@ -1,1 +1,31 @@
-{{yield}}
+<div class="row">
+  <div class="col-md-4">
+    {{#if model.images}}
+      {{photo-stack
+        modal-id=modalId
+        model=model.images
+      }}
+    {{/if}}
+  </div>
+  <div class="col-md-8">
+    <div>
+      <span class="bold title">
+        {{model.name}}
+      </span>
+      <span class="sub-title">
+        {{moment-format model.started "MMMM YYYY"}} to
+        {{#if model.ended}}
+          {{moment-format model.ended "MMMM YYYY"}}
+        {{else}}
+          Present
+        {{/if}}
+      </span>
+    </div>
+    <div>
+      {{{model.description}}}
+      {{#if model.url}}
+        <a href={{model.url}} target="_blank">Visit {{model.name}}</a>
+      {{/if}}
+    </div>
+  </div>
+</div>
