@@ -12,6 +12,9 @@ module.exports = function(defaults) {
   app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
   app.import('bower_components/bootstrap/dist/css/bootstrap.min.css.map');
 
+  //Chartjs
+  app.import('bower_components/Chart.js/dist/Chart.min.js');
+
   //JQuery UI
   app.import('bower_components/jquery-ui/themes/base/jquery-ui.min.css');
   app.import('bower_components/jquery-ui/jquery-ui.min.js');

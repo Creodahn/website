@@ -1,3 +1,7 @@
+* {
+  @include transition(.3s);
+}
+
 a {
   &:focus {
     outline: none;
@@ -17,7 +21,7 @@ body {
 }
 
 button {
-  &.btn {    
+  &.btn {
     &:focus {
       outline: none;
     }

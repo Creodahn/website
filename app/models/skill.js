@@ -1,9 +1,9 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  color: DS.attr('string'),
+  description: DS.attr('string'),
+  hoverColor: DS.attr('string'),
   name: DS.attr('string'),
-  startDate: DS.attr('date'),
-  endDate: DS.attr('date'),
-  years: DS.attr('number'),
-  description: DS.attr('string')
+  years: DS.attr('number')
 });

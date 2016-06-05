@@ -1,0 +1,23 @@
+.about-me {
+  & > .info {
+    .text-container {
+      @include box-shadow($shadow);
+      background-color: $bright-red;
+      margin: 10px 0;
+      padding: 10px;
+      padding-left: 300px;
+    }
+
+    @include font-size(20px);
+    //margin: 150px 0;
+  }
+
+  & > .profile-picture-container {
+    left: 50px;
+    position: absolute;
+    top: 5%;
+    z-index: 5;
+  }
+
+  position: relative;
+}

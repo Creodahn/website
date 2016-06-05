@@ -1,0 +1,10 @@
+$border-radius: '250px / 40px';
+
+.profile-picture-container {
+  @include border-radius(unquote($border-radius));
+  @include box-shadow($shadow);
+  margin: 8px;
+  max-height: 300px;
+  overflow: hidden;
+  width: 200px;
+}

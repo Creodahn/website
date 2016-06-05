@@ -1,0 +1,20 @@
+<figure class="profile-picture-container">
+  <img src={{model.profilePicture.url}} alt={{model.profilePicture.fileName}} />
+</figure>
+
+<div class="info">
+  <div class="text-container">
+    <div>
+      <strong>Name:</strong>&nbsp;{{model.fullName}}
+    </div>
+    <div>
+      <strong>Age:</strong>&nbsp;{{model.age}}
+    </div>
+    <div>
+      <strong>From:</strong>&nbsp;{{model.location}}
+    </div>
+  </div>
+  <div class="text-container">
+    {{model.description}}
+  </div>
+</div>

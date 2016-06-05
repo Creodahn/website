@@ -1,38 +1,48 @@
 /*Buttons*/
-.button {
-  &:hover {
-    color: #25a0da;
+.nav-pills {
+  & > li {
+    & > a {
+      &.btn-contact {
+        &:hover {
+          background-color: $black;
+          color: $vivid-yellow;
+        }
+
+        &:active,
+        &:focus {
+          background-color: $strong-yellow;
+          color: $black;
+        }
+
+        &.btn-linkedin {
+          background-image: url('http://justindrew.net/imgs/linkedin-icon.png');
+          background-position: 15px center;
+          background-repeat: no-repeat;
+          background-size: 43px 34px;
+        }
+
+        &.btn-email {
+          background-image: url('http://justindrew.net/imgs/email.png');
+          background-position: 15px center;
+          background-repeat: no-repeat;
+          background-size: 32px 32px;
+        }
+
+        @include transition(.3s);
+        @include font-size(20px);
+
+        background-color: $vivid-yellow;
+        border: 1px solid $black;
+        color: $black;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 15px auto;
+        padding: 15px;
+        text-align: center;
+        width: 250px;
+      }
+    }
   }
-
-  &:active {
-    background-color: $strong-yellow;
-    color: $black;
-  }
-
-  @include transition(.3s);
-  background-color: $vivid-yellow;
-  border: 1px solid $black;
-  color: $black;
-  font-weight: bold;
-  height: 30px;
-  line-height: 30px;
-  margin: 15px auto;
-  position: relative;
-  width: 250px;
-}
-
-.linkedin-button {
-  background-image: url('../imgs/linkedin-icon.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: 43px 34px;
-}
-
-.email-button {
-  background-image: url('../imgs/email.png');
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: 32px 32px;
 }
 
 .btn-close {

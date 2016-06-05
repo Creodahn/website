@@ -1,0 +1,11 @@
+.skill-container {
+  .graph-container,
+  .header {
+    padding: 20px;
+  }
+
+  .header {
+    @include box-shadow($shadow);
+    background-color: $bright-blue;
+  }
+}

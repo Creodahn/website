@@ -1,7 +1,14 @@
-<div class="container">
-  {{nav-bar}}
-  <div class="spacer"></div>
-  <div>
+{{#title-card
+  fullTitle=fullTitle
+  model=model
+  alterTitle="alterTitle"
+}}
+{{#if fullTitle}}
+{{else}}
+  <div class="container">
+    {{nav-bar}}
+    <div class="spacer"></div>
     {{outlet}}
   </div>
-</div>
+{{/if}}
+{{/title-card}}

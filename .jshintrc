@@ -2,7 +2,12 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "$",
+    "moment",
+    "ember",
+    "DS",
+    "Chart"
   ],
   "browser": true,
   "boss": true,

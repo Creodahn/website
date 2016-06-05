@@ -16,14 +16,21 @@ $bright-blue: #28abe3;
 $brighter-blue: #25a0da;
 $white: #fff;
 $black: #000;
+$transparent: rgba(255, 255, 255, 0);
 
 /*Imports*/
 @import 'functions';
 @import 'mixins';
 
+@import 'about-me';
 @import 'animations';
 @import 'buttons';
+@import 'contact-me';
+@import 'education';
 @import 'element-base-styles';
+@import 'images';
 @import 'layout';
 @import 'nav-bar';
+@import 'skills';
 @import 'title-card';
+@import 'utility';

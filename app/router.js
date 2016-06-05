@@ -12,7 +12,6 @@ Router.map(function() {
     this.route('work-experience');
     this.route('skills');
     this.route('projects');
-    this.route('contact-me');
   });
 });
 

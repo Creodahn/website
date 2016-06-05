@@ -1,11 +1,11 @@
-<section class="content-section title-card">
+<section class="{{if fullTitle 'content-section title-card' 'container small-title'}}">
   <header class="name">
-    <h1>justin drew</h1>
+    <h1>{{model.fullName}}</h1>
   </header>
   <footer class="title">
     <div>full stack developer</div>
   </footer>
-  <button class="btn btn-transparent" {{action "alterTitle"}}>Continue</button>
+  <button class="btn btn-transparent {{if fullTitle '' 'hidden'}}" {{action "alterTitle"}}>Continue</button>
 </section>
 
 {{yield}}

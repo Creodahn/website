@@ -1,5 +1,17 @@
+.bold {
+  font-weight: bold;
+}
+
+.bottom-spacer {
+  margin-bottom: 20px;
+}
+
 .bullet-title {
   display: inline-block;
+}
+
+.center {
+  text-align: center;
 }
 
 .hidden {
@@ -8,4 +20,12 @@
 
 .no-bullets {
   list-style-type: none;
+}
+
+.right {
+  text-align: right;
+}
+
+.spacer {
+  margin-bottom: 15px;
 }

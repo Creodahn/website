@@ -1,89 +1,66 @@
 /*Title Card*/
-.title-card,
-.name,
-.title {
-  display: flex;
+.small-title,
+.title-card {
+  & > .name,
+  & > .title {
+    @include display-flex;
+    @include flex(1);
+  }
+
+  & > .name {
+    h1 {
+      border-bottom: 2px inset $vivid-yellow;
+      margin: 0;
+    }
+
+    align-self: flex-end;
+    box-sizing: border-box;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  @include user-select(none);
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+}
+
+.small-title {
+  & > .name {
+    h1 {
+      @include font-size(32px);
+    }
+  }
+
+  & > .title {
+    @include font-size(18px);
+  }
+
+  background-image: radial-gradient(circle farthest-side, $light-orange, $transparent);
+  padding: 20px;
 }
 
 .title-card {
+  & > .name,
+  & > .title {
+    margin: 0 auto;
+    text-align: center;
+  }
+
   & > .name {
     h1 {
       @include font-size(56px);
-      padding: 20px;
     }
+
+    align-items: flex-end;
   }
 
   & > .title {
     @include font-size(24px);
   }
 
-  background-color: $light-orange;
+  @include display-flex;
+  @include flex-direction(column);
   background-image: radial-gradient(circle closest-side, $white, $light-orange);
-  flex-direction: column;
-  font-family: 'Cabin Sketch', cursive;
   height: 100vh;
   position: relative;
-}
-
-.name,
-.title {
-  flex: 1;
-  margin: 0 auto;
-  text-align: center;
-  width: 70%;
-}
-
-.name {
-  h1 {
-    @include font-size(32px);
-    align-self: flex-end;
-    border-bottom: 2px inset $vivid-yellow;
-    box-sizing: border-box;
-    font-weight: bold;
-    margin: 0;
-  }
-
-  padding: 5px;
-}
-
-.title {
-  @include font-size(18px);
-}
-
-/*Arrow*/
-.scroll-arrow {
-  bottom: 0;
-  height: 20px;
-  position: absolute;
-  width: 100px;
-}
-
-.arrow {
-  &:after,
-  &:before {
-    border: solid transparent;
-    content: '';
-    height: 0;
-    left: 50%;
-    position: absolute;
-    width: 0;
-  }
-
-  &:after {
-    border-top-color: $vivid-yellow;
-    border-width: 30px;
-    margin-left: -30px;
-  }
-
-  &:before {
-    border-top-color: $dark-vivid-yellow;
-    border-width: 36px;
-    margin-left: -36px;
-  }
-
-
-  @include animation(animation 2000ms linear infinite both);
-  cursor: pointer;
-  height: 0;
-  margin-top: -25px;
 }

@@ -1,70 +1,38 @@
 /*Navigation*/
 /*Breakpoint is 1300px*/
 .nav-bar {
-  a {
-    &:hover,
-    &.active {
-      background-color: $lime-green;
-    }
+  & > .nav-pills {
+    & > li {
+      & > a {
+        &:hover {
+          background-color: $off-white;
+          color: $lime-green;
+        }
 
-    @include transition(.3s);
-    background-color: #000;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    flex-direction: column;
-    padding: 10px;
-    width: 100px;
+        &.active,
+        &:focus {
+          background-color: $lime-green;
+        }
+
+        &.active {
+          &:hover {
+            color: $white;
+          }
+        }
+
+        @include transition(.3s);
+        background-color: $black;
+        border: 1px solid $black;
+        box-sizing: border-box;
+        color: $white;
+        cursor: pointer;
+        padding: 10px;
+      }
+    }
   }
 
-  background-color: #000;
-  border-bottom-left-radius: 400px 100px;
-  border-bottom-right-radius: 400px 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: absolute;
-  top: 100%;
+  background-color: $black;
+  padding: 2px;
   width: 100%;
   z-index: 20;
-}
-
-.sprite {
-  &.skill-icon {
-    background-image: url('imgs/skills.png');
-    background-repeat: no-repeat;
-    display: block;
-    height: 32px;
-    margin: 0 auto;
-    width: 32px;
-  }
-
-  &.education-icon {
-    background-position: -5px -5px;
-  }
-
-  &.project-icon {
-    background-position: -47px -5px;
-  }
-
-  &.contact-icon {
-    background-position: -5px -47px;
-  }
-
-  &.about-icon {
-    background-position: -47px -47px;
-  }
-
-  &.work-icon {
-    background-position: -89px -5px;
-  }
-
-  background-image: url('imgs/spritesheet.png');
-  background-repeat: no-repeat;
-  display: block;
-  height: 32px;
-  margin: 0 auto;
-  width: 32px;
 }
