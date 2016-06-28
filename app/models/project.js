@@ -8,5 +8,6 @@ export default DS.Model.extend({
   started: DS.attr('date'),
   url: DS.attr('string'),
   //relationships
-  images: DS.hasMany('image')
+  images: DS.hasMany('image'),
+  skills: DS.hasMany('skill')
 });

@@ -1,31 +1,41 @@
 <div class="row">
   <div class="col-md-4">
+    <div class="bold title">
+      {{#if model.url}}
+        <a href={{model.url}} target="_blank">{{model.name}}</a>
+      {{else}}
+        {{model.name}}
+      {{/if}}
+    </div>
+    <div class="sub-title">
+      {{moment-format model.started "MMMM YYYY"}} to
+      {{#if model.ended}}
+        {{moment-format model.ended "MMMM YYYY"}}
+      {{else}}
+        Present
+      {{/if}}
+    </div>
     {{#if model.images}}
       {{photo-stack
         modal-id=modalId
         model=model.images
+        title=title
       }}
     {{/if}}
   </div>
   <div class="col-md-8">
     <div>
-      <span class="bold title">
-        {{model.name}}
-      </span>
-      <span class="sub-title">
-        {{moment-format model.started "MMMM YYYY"}} to
-        {{#if model.ended}}
-          {{moment-format model.ended "MMMM YYYY"}}
-        {{else}}
-          Present
-        {{/if}}
-      </span>
-    </div>
-    <div>
       {{{model.description}}}
-      {{#if model.url}}
-        <a href={{model.url}} target="_blank">Visit {{model.name}}</a>
-      {{/if}}
     </div>
+    {{#if model.skills}}
+      <div>
+        <h3>Technologies Used in this Project</h3>
+        <ul>
+          {{#each model.skills as |skill|}}
+            <li>{{skill.name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
   </div>
 </div>

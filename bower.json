@@ -8,6 +8,8 @@
     "jquery": "^1.11.3",
     "jquery-ui": "^1.11.4",
     "bootstrap": "~3.3.5",
-    "Chart.js": "^2.1.4"
+    "Chart.js": "^2.1.4",
+    "froala-wysiwyg-editor": "^2.3.3",
+    "font-awesome": "^4.6.3"
   }
 }

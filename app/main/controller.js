@@ -4,9 +4,10 @@ export default Ember.Controller.extend({
   fullTitle: true,
   actions: {
     alterTitle: function() {
-      //$('.title-card').find('.btn-transparent').addClass('hidden');
-      //$('.title-card').removeClass('content-section').removeClass('title-card');
+      $('.title-card').switchClass('content-section title-card', 'container small-title');
+
       this.set('fullTitle', false);
+      // this.replaceRoute('main.about-me');
       this.transitionToRoute('main.about-me');
     }
   }

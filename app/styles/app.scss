@@ -25,14 +25,33 @@ $transparent: rgba(255, 255, 255, 0);
 @import 'about-me';
 @import 'animations';
 @import 'buttons';
+@import 'carousel-modifier';
 @import 'contact-me';
 @import 'education';
 @import 'element-base-styles';
+@import 'froala-modifier';
 @import 'images';
+@import 'inputs';
 @import 'layout';
+@import 'modal-modifier';
 @import 'nav-bar';
 @import 'projects';
 @import 'skills';
+@import 'substates';
 @import 'title-card';
 @import 'utility';
 @import 'work-experience';
+
+div {
+  &.container {
+    @include box-shadow($shadow);
+    background-clip: content-box;
+    background-color: $off-white;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 15px solid $off-white;
+    border-radius: 4px;
+    padding: 0;
+  }
+}

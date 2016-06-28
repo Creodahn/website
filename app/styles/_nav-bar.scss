@@ -1,33 +1,47 @@
 /*Navigation*/
 /*Breakpoint is 1300px*/
 .nav-bar {
-  & > .nav-pills {
-    & > li {
-      & > a {
-        &:hover {
-          background-color: $off-white;
-          color: $lime-green;
-        }
-
-        &.active,
-        &:focus {
-          background-color: $lime-green;
-        }
-
-        &.active {
+  & > .navbar-collapse {
+    & > .nav-pills {
+      & > li {
+        & > a {
           &:hover {
-            color: $white;
+            background-color: $off-white;
+            color: $lime-green;
           }
-        }
 
-        @include transition(.3s);
-        background-color: $black;
-        border: 1px solid $black;
-        box-sizing: border-box;
-        color: $white;
-        cursor: pointer;
-        padding: 10px;
+          &.active,
+          &:focus {
+            background-color: $lime-green;
+          }
+
+          &.active {
+            &:hover {
+              color: $white;
+            }
+          }
+
+          @include transition(.3s);
+          background-color: $black;
+          border: 1px solid $black;
+          box-sizing: border-box;
+          color: $white;
+          cursor: pointer;
+          padding: 10px;
+        }
       }
+    }
+
+    padding: 0;
+  }
+
+  & > .navbar-header {
+    & > .navbar-toggle {
+      & > .icon-bar {
+        background-color: #fff;
+      }
+
+      background-color: $lime-green;
     }
   }
 

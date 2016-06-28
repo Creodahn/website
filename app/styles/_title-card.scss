@@ -5,6 +5,8 @@
   & > .title {
     @include display-flex;
     @include flex(1);
+    margin: 0 auto;
+    text-align: center;
   }
 
   & > .name {
@@ -13,15 +15,19 @@
       margin: 0;
     }
 
+    align-items: flex-end;
     align-self: flex-end;
     box-sizing: border-box;
     font-weight: bold;
     margin: 0;
   }
 
+  @include display-flex;
+  @include flex-direction(column);
   @include user-select(none);
   font-family: 'Rock Salt', cursive;
   padding: 20px;
+  position: relative;
 }
 
 .small-title {
@@ -35,32 +41,50 @@
     @include font-size(18px);
   }
 
-  background-image: radial-gradient(circle farthest-side, $light-orange, $transparent);
+  height: 110px;
   padding: 20px;
 }
 
-.title-card {
-  & > .name,
-  & > .title {
-    margin: 0 auto;
-    text-align: center;
+.title-background {
+  &:before {
+    background-image: radial-gradient(circle farthest-side, rgba($light-orange, 1), $transparent);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -100;
   }
 
+  &.small-title {
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &.title-card {
+    &:before {
+      opacity: 0;
+    }
+
+    background-image: radial-gradient(circle closest-side, rgba($white, .25), rgba($light-orange, .75));
+    z-index: 100;
+  }
+}
+
+.title-card {
   & > .name {
     h1 {
       @include font-size(56px);
     }
-
-    align-items: flex-end;
   }
 
   & > .title {
     @include font-size(24px);
   }
 
-  @include display-flex;
-  @include flex-direction(column);
-  background-image: radial-gradient(circle closest-side, $white, $light-orange);
+  cursor: pointer;
   height: 100vh;
-  position: relative;
+  padding: 0;
 }

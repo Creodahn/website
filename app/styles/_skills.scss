@@ -4,6 +4,22 @@
     padding: 20px;
   }
 
+  .graph-container {
+    &:before {
+      @include filter(blur(20px));
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    background: hsla(0, 0%, 100%, .5);
+    overflow: hidden;
+  }
+
   .header {
     @include box-shadow($shadow);
     background-color: $bright-blue;

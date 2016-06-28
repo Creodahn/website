@@ -32,7 +32,7 @@
   box-shadow: $shadows;
 }
 
-@mixin display-flex() {
+@mixin display-flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -101,7 +101,19 @@
 
 @mixin user-select($option) {
   @if $option == none {
-    cursor: default;
+    &:not(button) {
+      &:not(a) {
+        &:not(.title-card) {
+          cursor: default;
+        }
+      }
+    }
+
+    a,
+    button,
+    .title-card {
+      cursor: pointer;
+    }
   }
   -webkit-touch-callout: $option;
   -webkit-user-select: $option;
@@ -111,7 +123,7 @@
   user-select: $option;
 }
 
-@mixin white-space() {
+@mixin white-space {
   white-space: pre-wrap;
   white-space: -moz-pre-wrap;
   white-space: -pre-wrap;

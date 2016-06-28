@@ -9,7 +9,7 @@
 
   @include box-shadow($shadow);
   @include font-size(18px);
-  background-color: $light-orange;
+  background-color: rgba($light-orange, .8);
   margin-bottom: 25px;
   padding: 20px;
 }

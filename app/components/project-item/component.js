@@ -7,5 +7,8 @@ export default Ember.Component.extend({
   //computed properties
   modalId: Ember.computed('model.name', function() {
     return this.get('model.name').replace(' ', '');
+  }),
+  title: Ember.computed('model.name', function() {
+    return this.get('model.name') + ' Screenshots';
   })
 });

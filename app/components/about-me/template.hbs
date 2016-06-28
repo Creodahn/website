@@ -3,16 +3,16 @@
 </figure>
 
 <div class="info">
+  <h2 class="bold text-container">Who Am I?</h2>
   <div class="text-container">
-    <div>
-      <strong>Name:</strong>&nbsp;{{model.fullName}}
-    </div>
-    <div>
-      <strong>Age:</strong>&nbsp;{{model.age}}
-    </div>
-    <div>
-      <strong>From:</strong>&nbsp;{{model.location}}
-    </div>
+    <dl>
+      <dt>Name:</dt>
+      <dd>{{model.fullName}}</dd>
+      <dt>Age:</dt>
+      <dd>{{model.age}}</dd>
+      <dt>From:</dt>
+      <dd>{{model.location}}</dd>
+    </dl>
   </div>
   <div class="text-container">
     {{model.description}}

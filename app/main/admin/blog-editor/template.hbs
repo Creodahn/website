@@ -1,0 +1,18 @@
+<div class="input-container">
+  {{input
+    type="text"
+    class="form-control"
+    value=title
+    id="blog-title"
+    placeholder="Enter a Title"
+  }}
+</div>
+{{froala-editor
+  params=froalaEditor.params
+  value=value
+  focus=(action "focus")
+  contentChanged=(action "contentChanged")
+}}
+<div class="center spacer">
+  <button type="button" class="btn btn-success">Save</button>
+</div>

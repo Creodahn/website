@@ -1,16 +1,25 @@
 .contact-me {
-  .body,
-  .header {
-    @include box-shadow($shadow);
-    background-color: $bright-blue;
-    margin-bottom: 10px;
+  & > .info {
+    .body,
+    .header {
+      @include box-shadow($shadow);
+      background-color: rgba($bright-blue, .8);
+      margin: 10px 0;
+      margin-left: 5px;
+    }
+
+    .body {
+      padding: 10px;
+    }
+
+    .header {
+      padding: 30px;
+    }
+
+    @include font-size(20px);
   }
 
-  .body {
-    padding: 10px;
-  }
-
-  .header {
-    padding: 30px;
-  }
+  @include display-flex;
+  @include flex(1);
+  @include flex-direction(column);
 }
