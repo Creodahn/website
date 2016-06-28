@@ -23,6 +23,7 @@ export default DS.Model.extend({
     return this.get('firstName') + ' ' + this.get('lastName');
   }),
   //relationships
+  blogPosts: DS.hasMany('blog-post'),
   educations: DS.hasMany('education'),
   images: DS.hasMany('image'),
   profilePicture: DS.belongsTo('image', {inverse: null}),
