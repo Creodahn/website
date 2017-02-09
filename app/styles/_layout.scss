@@ -12,13 +12,13 @@
   overflow-x: hidden;
   overflow-y: auto;
   width: 100vw;
-}
 
-.content-section {
-  &:nth-child(odd) {
-    @include box-shadow($shadow);
+  &-section {
+    position: relative;
+    text-align: center;
+
+    &:nth-child(odd) {
+      @include box-shadow($shadow);
+    }
   }
-
-  position: relative;
-  text-align: center;
 }

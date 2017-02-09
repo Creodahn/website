@@ -47,7 +47,7 @@ div {
     @include box-shadow($shadow);
     background-clip: content-box;
     background-color: $off-white;
-    background-position: bottom center;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     border: 15px solid $off-white;

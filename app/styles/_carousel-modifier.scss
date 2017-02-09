@@ -1,4 +1,11 @@
 .carousel-caption {
+  background: hsla(0, 0%, 100%, .5);
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+
   &::before {
     @include filter(blur(20px));
     bottom: 0;
@@ -8,29 +15,23 @@
     right: 0;
     top: 0;
   }
-
-  // background-image: radial-gradient(circle farthest-side, rgba(255, 255, 255, .75), rgba(255, 255, 255, 0));
-  background: hsla(0, 0%, 100%, .5);
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  padding: 0;
-  width: 100%;
 }
 
 .carousel-caption,
 .carousel-control {
+  @include user-select(none);
+  color: $lime-green;
+
   &:active,
   &:focus,
   &:hover {
     color: $lime-green;
   }
-
-  @include user-select(none);
-  color: $lime-green;
 }
 
 .carousel-control {
+  width: 10%;
+
   &.left {
     background-image: linear-gradient(to left, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .25) 100%);
   }
@@ -38,16 +39,14 @@
   &.right {
     background-image: linear-gradient(to right, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .25) 100%);
   }
-
-  width: 10%;
 }
 
 .carousel-indicators {
+  border-color: $lime-green;
+
   li {
     &.active {
       background-color: $lime-green;
     }
-
-    border-color: $lime-green;
   }
 }

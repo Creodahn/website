@@ -1,12 +1,12 @@
 .input-container {
+  margin: 5px;
+
   .form-control {
+    border: 1px solid $black;
+
     &:focus {
       @include box-shadow(none);
       outline: 0;
     }
-
-    border: 1px solid $black;
   }
-
-  margin: 5px;
 }

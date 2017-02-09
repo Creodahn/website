@@ -13,69 +13,74 @@
           background-color: $strong-yellow;
           color: $black;
         }
-
-        &.btn-linkedin {
-          background-image: url('http://justindrew.net/imgs/linkedin-icon.png');
-          background-position: 15px center;
-          background-repeat: no-repeat;
-          background-size: 43px 34px;
-        }
-
-        &.btn-email {
-          background-image: url('http://justindrew.net/imgs/email.png');
-          background-position: 15px center;
-          background-repeat: no-repeat;
-          background-size: 32px 32px;
-        }
-
-        @include transition(.3s);
-        @include font-size(20px);
-
-        background-color: $vivid-yellow;
-        border: 1px solid $black;
-        color: $black;
-        cursor: pointer;
-        font-weight: bold;
-        margin: 15px auto;
-        padding: 15px;
-        text-align: center;
-        width: 250px;
       }
     }
   }
 }
+.btn {
+  &-close {
+    @include box-shadow($shadow);
+    @include transition(.3s);
+    @include user-select(none);
+    background-color: $bright-red;
+    border: 5px solid $white;
+    border-radius: 60px;
+    color: $white;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    text-shadow: 0 0 7px rgba(0, 0, 0, .3);
+    top: 20px;
+    width: 60px;
 
-.btn-close {
-  &:hover {
-    @include transform(scale(1.1));
+    &:hover {
+      @include transform(scale(1.1));
+    }
+
+    &:active {
+      @include transform(scale(.95));
+      background-color: $strong-red;
+    }
   }
 
-  &:active {
-    @include transform(scale(.95));
-    background-color: $strong-red;
+  &-contact {
+    @include transition(.3s);
+    @include font-size(20px);
+
+    background-color: $vivid-yellow;
+    border: 1px solid $black;
+    color: $black;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 15px auto;
+    padding: 15px;
+    text-align: center;
+    width: 250px;
   }
 
-  @include box-shadow($shadow);
-  @include transition(.3s);
-  @include user-select(none);
-  background-color: $bright-red;
-  border: 5px solid $white;
-  border-radius: 60px;
-  color: $white;
-  cursor: pointer;
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 40px;
-  font-weight: bold;
-  height: 60px;
-  line-height: 60px;
-  position: absolute;
-  right: 20px;
-  text-align: center;
-  text-shadow: 0 0 7px rgba(0, 0, 0, .3);
-  top: 20px;
-  width: 60px;
-}
+  &-linkedin,
+  &-email {
+    background-position: 15px center;
+    background-repeat: no-repeat;
+  }
 
-.btn-transparent {
-  background-color: transparent;
+  &-linkedin {
+    background-image: url('/assets/imgs/linkedin-icon.png');
+    background-size: 43px 34px;
+  }
+
+  &-email {
+    background-image: url('/assets/imgs/email.png');
+    background-size: 32px 32px;
+  }
+
+  &-transparent {
+    background-color: transparent;
+  }
 }

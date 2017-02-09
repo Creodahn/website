@@ -1,4 +1,8 @@
 .contact-me {
+  @include display-flex;
+  @include flex(1);
+  @include flex-direction(column);
+
   & > .info {
     .body,
     .header {
@@ -18,8 +22,4 @@
 
     @include font-size(20px);
   }
-
-  @include display-flex;
-  @include flex(1);
-  @include flex-direction(column);
 }
