@@ -1,5 +1,13 @@
 .error,
 .loading {
+  @include display-flex;
+  @include flex-direction(column);
+  @include user-select(none);
+  font-family: 'Rock Salt', cursive;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+
   & > footer,
   & > header {
     @include display-flex;
@@ -14,53 +22,54 @@
   }
 
   & > header {
-    h1 {
-      @include font-size(56px);
-      border-bottom: 2px inset $vivid-yellow;
-      margin: 0;
-    }
-
     align-items: flex-end;
     align-self: center;
     box-sizing: border-box;
     font-weight: bold;
     margin: 0;
-  }
 
-  @include display-flex;
-  @include flex-direction(column);
-  @include user-select(none);
-  font-family: 'Rock Salt', cursive;
-  height: 100vh;
-  padding: 20px;
-  position: relative;
+    h1 {
+      @include font-size(56px);
+      border-bottom: 2px inset $vivid-yellow;
+      margin: 0;
+    }
+  }
 }
 
 .loading {
   & > footer {
     .loader {
+      border: 16px solid $transparent;
+      border-radius: 50%;
+      box-sizing: content-box;
+      height: 240px;
+      left: -120px;
+      position: absolute;
+      top: 30px;
+      width: 240px;
+
       &:nth-child(odd) {
+        animation: spin 2s linear infinite;
+        border-bottom-color: $light-orange;
+        border-top-color: $lime-green;
+
         & > div {
           animation: spin 4s linear infinite;
           border-bottom-color: $light-orange;
           border-top-color: $lime-green;
         }
-
-        animation: spin 2s linear infinite;
-        border-bottom-color: $light-orange;
-        border-top-color: $lime-green;
       }
 
       &:nth-child(even) {
+        animation: anti-spin 2s linear infinite;
+        border-bottom-color: $lime-green;
+        border-top-color: $light-orange;
+
         & > div {
           animation: anti-spin 4s linear infinite;
           border-bottom-color: $lime-green;
           border-top-color: $light-orange;
         }
-
-        animation: anti-spin 2s linear infinite;
-        border-bottom-color: $lime-green;
-        border-top-color: $light-orange;
       }
 
       & > div {
@@ -72,15 +81,6 @@
         top: 75px;
         width: 90px;
       }
-
-      border: 16px solid $transparent;
-      border-radius: 50%;
-      box-sizing: content-box;
-      height: 240px;
-      left: -120px;
-      position: absolute;
-      top: 30px;
-      width: 240px;
     }
   }
 }

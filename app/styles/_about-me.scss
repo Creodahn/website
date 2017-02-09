@@ -1,6 +1,17 @@
 .about-me {
+  @include display-flex;
+  @include flex(1);
+  @include flex-direction(column);
+  position: relative;
+
   & > .info {
     .text-container {
+      @include box-shadow($shadow);
+      background-color: rgba($bright-red, .8);
+      margin: 10px 0;
+      padding: 30px;
+      padding-left: 300px;
+
       dd,
       dt {
         @include user-select(none);
@@ -8,32 +19,49 @@
       }
 
       dd {
-        &:after {
+        &::after {
           @include user-select(none);
           content: '\A';
           white-space: pre;
         }
       }
 
-      @include box-shadow($shadow);
-      background-color: rgba($bright-red, .8);
-      margin: 10px 0;
-      padding: 30px;
-      padding-left: 300px;
+      &.bio {
+        padding: 50px 30px 30px;
+
+        @media(max-width: 991px) {
+          padding: 60px 30px 30px;
+        }
+      }
+
+      &.details {
+        @media(max-width: 991px) {
+          padding-left: 250px;
+        }
+      }
+
+      &.title {
+        @media(max-width: 991px) {
+          padding: 30px;
+        }
+      }
     }
 
     @include font-size(20px);
   }
 
   & > .profile-picture-container {
-    left: 50px;
     position: absolute;
-    top: 5%;
     z-index: 5;
-  }
 
-  @include display-flex;
-  @include flex(1);
-  @include flex-direction(column);
-  position: relative;
+    @media(min-width: 992px) {
+      left: 50px;
+      top: 5%;
+    }
+
+    @media(max-width: 991px) {
+      left: 20px;
+      top: 15%;
+    }
+  }
 }

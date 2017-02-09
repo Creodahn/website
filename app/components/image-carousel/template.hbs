@@ -7,13 +7,13 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     {{#each model as |image index|}}
-      <div class="item {{if (equal-to index 0) 'active' ''}}">
+      <figure class="item {{if (equal-to index 0) 'active' ''}}">
         <img src={{image.url}} alt={{image.fileName}}>
         <div class="carousel-caption">
           <h3>{{image.fileName}}</h3>
           <p>{{image.description}}</p>
         </div>
-      </div>
+      </figure>
     {{/each}}
   </div>
   <a class="left carousel-control" href={{target}} role="button" data-slide="prev">

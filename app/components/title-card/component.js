@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: 'main',
+  tagName: '',
   actions: {
     alterTitle() {
       if(this.get('fullTitle')) {

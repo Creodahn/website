@@ -1,9 +1,10 @@
 import DS from 'ember-data';
 import Ember from 'ember';
 import moment from 'moment';
+// const log = Ember.Logger.log;
 
 export default DS.Model.extend({
-  //attributes
+  // attributes
   birthDate: DS.attr('date'),
   description: DS.attr('string'),
   email: DS.attr('string'),
@@ -12,21 +13,19 @@ export default DS.Model.extend({
   linkedin: DS.attr('string'),
   location: DS.attr('string'),
   resumeUrl: DS.attr('string'),
-  //computed properties
+  title: DS.attr('string'),
+  // computed properties
   age: Ember.computed('birthDate', function() {
-    let today = moment(Date()),
-        birth = moment(this.get('birthDate'));
-
-    return today.diff(birth, 'years');
+    return moment().diff(this.get('birthDate').toISOString(), 'years');
   }),
   fullName: Ember.computed('firstName', 'lastName', function() {
-    return this.get('firstName') + ' ' + this.get('lastName');
+    return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
-  //relationships
+  // relationships
   blogPosts: DS.hasMany('blog-post'),
   educations: DS.hasMany('education'),
   images: DS.hasMany('image'),
-  profilePicture: DS.belongsTo('image', {inverse: null}),
+  profilePicture: DS.belongsTo('image', { inverse: null }),
   projects: DS.hasMany('projects'),
   skills: DS.hasMany('skill'),
   workExperiences: DS.hasMany('work-experience')

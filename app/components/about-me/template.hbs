@@ -2,9 +2,9 @@
   <img src={{model.profilePicture.url}} alt={{model.profilePicture.fileName}} />
 </figure>
 
-<div class="info">
-  <h2 class="bold text-container">Who Am I?</h2>
-  <div class="text-container">
+<article class="info">
+  <h2 class="bold text-container title">Who Am I?</h2>
+  <div class="details text-container">
     <dl>
       <dt>Name:</dt>
       <dd>{{model.fullName}}</dd>
@@ -14,7 +14,7 @@
       <dd>{{model.location}}</dd>
     </dl>
   </div>
-  <div class="text-container">
+  <div class="bio text-container">
     {{model.description}}
   </div>
-</div>
+</article>

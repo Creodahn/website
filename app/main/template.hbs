@@ -1,13 +1,15 @@
-{{#title-card
-  fullTitle=fullTitle
-  model=model
-  alterTitle="alterTitle"
-}}
-{{#if fullTitle}}
-{{else}}
-  <div class="container" style={{make-safe style}}>
-    {{nav-bar}}
-    {{outlet}}
-  </div>
-{{/if}}
-{{/title-card}}
+<main>
+  {{#title-card
+    fullTitle=fullTitle
+    model=model
+    alterTitle="alterTitle"
+  }}
+    {{#if fullTitle}}
+    {{else}}
+      <section class="container" style={{make-safe style}}>
+        {{nav-bar}}
+        {{outlet}}
+      </section>
+    {{/if}}
+  {{/title-card}}
+</main>
