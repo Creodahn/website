@@ -16,7 +16,9 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   // computed properties
   age: Ember.computed('birthDate', function() {
-    return moment().diff(this.get('birthDate').toISOString(), 'years');
+    const birth = moment(this.get('birthDate')).toISOString();
+
+    return moment().diff(birth, 'years');
   }),
   fullName: Ember.computed('firstName', 'lastName', function() {
     return `${this.get('firstName')} ${this.get('lastName')}`;
