@@ -1,1 +1,47 @@
-{{outlet}}
+<form {{action "save" on="change"}}>
+  <div class="form-group">
+    <label>Full Name</label>
+    {{input
+      class="form-control"
+      placeholder="Name"
+      value=model.name
+    }}
+  </div>
+
+  <div class="form-group">
+    <label>Title</label>
+    {{input
+      class="form-control"
+      placeholder="Title"
+      value=model.title
+    }}
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    {{input
+      class="form-control"
+      placeholder="Email"
+      value=model.email
+    }}
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    {{input
+      class="form-control"
+      placeholder="Location"
+      value=model.location
+    }}
+  </div>
+
+  <div class="form-group">
+    <label>Birth Date</label>
+    {{bs-datetimepicker
+      date=model.birthDate
+      maxDate=now
+      format="MM/DD/YYYY"
+      openOnFocus=true
+    }}
+  </div>
+</form>

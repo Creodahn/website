@@ -34,12 +34,8 @@ test('email is a string attribute', function(assert) {
   runAttrTest.call(this, assert, 'person', 'email', 'string', false, 'test');
 });
 
-test('firstName is a string attribute', function(assert) {
-  runAttrTest.call(this, assert, 'person', 'firstName', 'string', false, 'test');
-});
-
-test('lastName is a string attribute', function(assert) {
-  runAttrTest.call(this, assert, 'person', 'lastName', 'string', false, 'test');
+test('name is a string attribute', function(assert) {
+  runAttrTest.call(this, assert, 'person', 'name', 'string', false, 'test');
 });
 
 test('linkedin is a string attribute', function(assert) {
@@ -75,14 +71,22 @@ test('age is the difference in years between birthDate and today', function(asse
     assert.equal(person.get('age'), expected, `expected ${expected}, got ${person.get('age')}. birth = ${birth}`);
 });
 
-test('fullName is firstName and lastName concatenated', function(assert) {
-  const expected = 'Justin Drew',
+test('firstName is first slice of name', function(assert) {
+  const expected = 'Justin',
         person = this.subject({
-          firstName: 'Justin',
-          lastName: 'Drew'
+          name: 'Justin Drew'
         });
 
-  assert.equal(person.get('fullName'), expected, `expected ${expected}, got ${person.get('fullName')}`);
+  assert.equal(person.get('firstName'), expected, `expected ${expected}, got ${person.get('firstName')}`);
+});
+
+test('lastName is last slice of name', function(assert) {
+  const expected = 'Drew',
+        person = this.subject({
+          name: 'Justin Drew'
+        });
+
+  assert.equal(person.get('lastName'), expected, `expected ${expected}, got ${person.get('lastName')}`);
 });
 
 // relationships

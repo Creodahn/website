@@ -8,10 +8,9 @@ export default DS.Model.extend({
   birthDate: DS.attr('date'),
   description: DS.attr('string'),
   email: DS.attr('string'),
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
   linkedin: DS.attr('string'),
   location: DS.attr('string'),
+  name: DS.attr('string'),
   resumeUrl: DS.attr('string'),
   title: DS.attr('string'),
   // computed properties
@@ -20,8 +19,11 @@ export default DS.Model.extend({
 
     return moment().diff(birth, 'years');
   }),
-  fullName: Ember.computed('firstName', 'lastName', function() {
-    return `${this.get('firstName')} ${this.get('lastName')}`;
+  firstName: Ember.computed('name', function() {
+    return this.get('name').split(' ').slice(0, 1);
+  }),
+  lastName: Ember.computed('name', function() {
+    return this.get('name').split(' ').slice(-1);
   }),
   // relationships
   blogPosts: DS.hasMany('blog-post'),
@@ -30,5 +32,6 @@ export default DS.Model.extend({
   profilePicture: DS.belongsTo('image', { inverse: null }),
   projects: DS.hasMany('projects'),
   skills: DS.hasMany('skill'),
+  user: DS.belongsTo('user'),
   workExperiences: DS.hasMany('work-experience')
 });

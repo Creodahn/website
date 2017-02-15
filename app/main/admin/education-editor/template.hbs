@@ -1,1 +1,13 @@
-{{outlet}}
+<div>
+  {{input
+    placeholder="School Name"
+    value=schoolName
+  }}
+  
+</div>
+{{#each model.educations as |education|}}
+  {{education-item
+    edit=true
+    model=education
+  }}
+{{/each}}
