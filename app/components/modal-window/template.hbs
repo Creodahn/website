@@ -1,17 +1,50 @@
-<div id={{modal-id}} class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        {{#if title}}
-          <h4 class="modal-title">{{title}}</h4>
+<div id={{modal-id}} class="modal fade {{if fireworks 'fireworks'}} {{modal-classes}}" tabindex="-1" role="dialog" aria-labelledby="{{modal-id}}-title" data-backdrop="{{if static-backdrop 'static' 'true'}}">
+  <div class="modal-dialog {{modal-dialog-classes}}" role="document">
+    <div class="modal-content {{modal-content-classes}}">
+      <div class="loading">
+        <div></div>
+      </div>
+      {{#if hide-header}}
+      {{else}}
+        <div class="modal-header">
+          {{#if static-backdrop}}
+          {{else}}
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          {{/if}}
+          {{#if modal-title}}
+            <h4 id="{{modal-id}}-title" class="modal-title {{modal-title-classes}}">{{modal-title}}</h4>
+          {{/if}}
+        </div>
+      {{/if}}
+      <form {{action "formAction" on="submit" preventDefault=true}}>
+        <div class="modal-body {{modal-body-classes}}">
+          <div class="loading">
+            <div></div>
+          </div>
+          {{yield}}
+        </div>
+        {{#if show-footer}}
+          <div class="modal-footer">
+            <div class="loading">
+              <div></div>
+            </div>
+            {{#if single-footer-button}}
+              <button type="{{if footer-button-type footer-button-type 'button'}}" class="btn btn-primary">
+                {{if footer-button-caption footer-button-caption 'OK'}}
+              </button>
+            {{else}}
+              <button id="{{modal-id}}-cancel" {{action "cancelAction"}} type="button" class="btn btn-default {{footer-cancel-classes}}">
+                {{if footer-cancel-caption footer-cancel-caption 'Cancel'}}
+              </button>
+              <button id="{{modal-id}}-ok" type="{{if footer-button-type footer-button-type 'button'}}" class="btn btn-primary {{footer-button-classes}}">
+                {{if footer-button-caption footer-button-caption 'OK'}}
+              </button>
+            {{/if}}
+          </div>
         {{/if}}
-      </div>
-      <div class="modal-body">
-        {{yield}}
-      </div>
+      </form>
     </div>
   </div>
 </div>

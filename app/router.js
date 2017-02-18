@@ -27,6 +27,7 @@ Router.map(function() {
     });
     this.route('blog');
   });
+  this.route('login');
 });
 
 export default Router;

@@ -1,0 +1,48 @@
+<div class="main">
+  {{#modal-window
+    fireworks=false
+    flex-modal=false
+    hide-header=true
+    modal-classes="login-modal login"
+    modal-id="login-modal"
+    show-footer=false
+    show-on-transition=true
+    static-backdrop=true
+    formAction="authenticate"
+  }}
+    <div class="flex-layout flex-align-center">
+      <h2>Login</h2>
+    </div>
+
+    <div class="flex-layout">
+      {{input
+        type="text"
+        label-class="float-left"
+        name="username"
+        value=username
+        placeholder="Username"
+      }}
+      {{input
+        type="password"
+        placeholder="Password"
+        label-class="float-left"
+        name="password"
+        value=password
+      }}
+      <div class="flex-center flex-column flex-display">
+        <button id="sign-in" type="submit" class="btn btn-connect btn-green hvr-radial-out">
+          Sign In
+        </button>
+        {{#if isCancelable}}
+          <button id="cancel" {{action "cancel"}} type="button" class="btn btn-connect flex-center flex-display hvr-radial-out">
+            Cancel
+          </button>
+        {{/if}}
+        {{#link-to "main.about-me" tagName="button" class="btn btn-blue flex-center flex-display hvr-radial-out"}}
+          Home
+        {{/link-to}}
+      </div>
+    </div>
+  {{/modal-window}}
+
+</div>

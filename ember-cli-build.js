@@ -7,6 +7,9 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  //Bootstrap
+  app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');
+
   //Chartjs
   app.import('bower_components/Chart.js/dist/Chart.min.js');
 
