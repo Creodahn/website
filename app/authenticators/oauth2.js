@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import ENV from 'personal-website/config/environment';
 import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
 
@@ -19,7 +20,7 @@ export default OAuth2PasswordGrant.extend({
       }).then(function(response) {
         Ember.run(function() {
           resolve({
-            authentication_token: response.authentication_token
+            access_token: response.authentication_token
           });
         });
       }, function(xhr) {

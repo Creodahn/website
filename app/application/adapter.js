@@ -5,8 +5,5 @@ import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   namespace: 'api',
   host: ENV.APP.apiURL,
-  authorizer: 'authorizer:application',
-  headers: {
-    Accept: 'application/vnd.api+json; charset=utf-8'
-  }
+  authorizer: 'authorizer:application'
 });
