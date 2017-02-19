@@ -1,48 +1,44 @@
 <article class="project-item">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="bold title">
-        {{#if model.url}}
-          <a href={{model.url}} target="_blank">{{model.name}}</a>
-        {{else}}
-          {{model.name}}
-        {{/if}}
-      </div>
+  <div class="col-xs-12">
+    <div class="bold title">
+      {{#if model.url}}
+        <a href={{model.url}} target="_blank">{{model.name}}</a>
+      {{else}}
+        {{model.name}}
+      {{/if}}
     </div>
-    <div class="row">
-      <div class="col-xs-4">
-        <div class="sub-title">
-          {{moment-format model.started "MMMM YYYY"}} to
-          {{#if model.ended}}
-            {{moment-format model.ended "MMMM YYYY"}}
-          {{else}}
-            Present
-          {{/if}}
-        </div>
-        {{#if model.images}}
-          {{photo-stack
-            modal-id=modalId
-            model=model.images
-            title=title
-            selectImages="selectImages"
-          }}
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="sub-title">
+        {{moment-format model.started "MMMM YYYY"}} to
+        {{#if model.ended}}
+          {{moment-format model.ended "MMMM YYYY"}}
+        {{else}}
+          Present
         {{/if}}
       </div>
-      <div class="col-xs-8">
+      {{#if model.images}}
+        {{photo-stack
+          modal-id=modalId
+          model=model.images
+          title=title
+          selectImages="selectImages"
+        }}
+      {{/if}}
+    </div>
+    <div class="col-xs-8">
+      {{{model.description}}}
+      {{#if model.skills}}
         <div>
-          {{{model.description}}}
+          <h3>Technologies Used in this Project</h3>
+          <ul>
+            {{#each model.skills as |skill|}}
+              <li>{{skill.name}}</li>
+            {{/each}}
+          </ul>
         </div>
-        {{#if model.skills}}
-          <div>
-            <h3>Technologies Used in this Project</h3>
-            <ul>
-              {{#each model.skills as |skill|}}
-                <li>{{skill.name}}</li>
-              {{/each}}
-            </ul>
-          </div>
-        {{/if}}
-      </div>
+      {{/if}}
     </div>
   </div>
 </article>
