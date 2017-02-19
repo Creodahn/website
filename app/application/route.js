@@ -4,13 +4,10 @@ const { service } = Ember.inject;
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   session: service('session'),
-  sessionAuthenticated() {
-    console.log('session authenticated');
-  },
-  sessionInvalidated() {
-    console.log('session invalidated');
-  },
   actions: {
+    didTransition() {
+      $('body').removeClass('modal-open');
+    },
     error(error/* , transition */) {
       if(error) {
         this.transitionTo('error');

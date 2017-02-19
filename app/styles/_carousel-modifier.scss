@@ -1,52 +1,87 @@
-.carousel-caption {
-  background: hsla(0, 0%, 100%, .5);
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  padding: 0;
-  width: 100%;
-
-  &::before {
-    @include filter(blur(20px));
-    bottom: 0;
-    content: '';
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-}
-
-.carousel-caption,
-.carousel-control {
-  @include user-select(none);
-  color: $lime-green;
-
-  &:active,
-  &:focus,
-  &:hover {
+.carousel {
+  &-caption,
+  &-control {
+    @include user-select(none);
     color: $lime-green;
-  }
-}
 
-.carousel-control {
-  width: 10%;
-
-  &.left {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .25) 100%);
+    &:active,
+    &:focus,
+    &:hover {
+      color: $lime-green;
+    }
   }
 
-  &.right {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .25) 100%);
+  &-caption {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex(1);
+
+    align-content: center;
+    align-items: center;
+    background: hsla(0, 0%, 100%, .5);
+    border-top: 1px solid $black;
+    bottom: 0;
+    justify-content: center;
+    left: 0;
+    overflow: hidden;
+    padding: 0;
+    padding-top: 10px;
+    position: relative;
+    text-shadow: 1px 1px 1px $black;
+    width: 100%;
+
+    &::before {
+      @include filter(blur(20px));
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    h3 {
+      @include font-size(30px);
+    }
   }
-}
 
-.carousel-indicators {
-  border-color: $lime-green;
+  &-control {
+    width: 10%;
 
-  li {
-    &.active {
-      background-color: $lime-green;
+    &.left {
+      background-image: linear-gradient(to left, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .25) 100%);
+    }
+
+    &.right {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, .0001), rgba(0, 0, 0, .25) 100%);
+    }
+  }
+
+  &-indicators {
+    bottom: 35px;
+
+    li {
+      border-color: $lime-green;
+
+      &.active {
+        background-color: $lime-green;
+      }
+    }
+  }
+
+  &-inner {
+    .item {
+      min-height: 450px;
+
+      &.active {
+        @include display-flex;
+        @include flex-direction(column);
+
+        img {
+          @include display-flex;
+          max-height: 400px;
+        }
+      }
     }
   }
 }

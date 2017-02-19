@@ -1,20 +1,22 @@
-<figure class="profile-picture-container">
-  <img src={{model.profilePicture.url}} alt={{model.profilePicture.fileName}} />
-</figure>
+<section class="about-me">
+  <figure class="profile-picture-container">
+    <img src={{model.profilePicture.url}} alt={{model.profilePicture.fileName}} />
+  </figure>
 
-<article class="info">
-  <h2 class="bold text-container title">Who Am I?</h2>
-  <div class="details text-container">
-    <dl>
-      <dt>Name:</dt>
-      <dd>{{model.name}}</dd>
-      <dt>Age:</dt>
-      <dd>{{model.age}}</dd>
-      <dt>From:</dt>
-      <dd>{{model.location}}</dd>
-    </dl>
-  </div>
-  <div class="bio text-container">
-    {{model.description}}
-  </div>
-</article>
+  <article class="info">
+    <h2 class="bold text-container title">Who Am I?</h2>
+    <div class="details text-container">
+      <dl>
+        <dt>Name:</dt>
+        <dd>{{model.name}}</dd>
+        <dt>Age:</dt>
+        <dd>{{model.age}}</dd>
+        <dt>From:</dt>
+        <dd>{{model.location}}</dd>
+      </dl>
+    </div>
+    <div class="bio text-container">
+      {{model.description}}
+    </div>
+  </article>
+</section>

@@ -16,10 +16,10 @@ $border-radius: '250px / 40px';
   border: 6px solid #fff;
   box-sizing: border-box;
   display: inline-block;
-  height: 200px;
-  margin: 50px;
+  height: 150px;
+  margin: 20px;
   position: relative;
-  width: 200px;
+  width: 150px;
   z-index: 500;
 
   &:hover {
@@ -30,6 +30,11 @@ $border-radius: '250px / 40px';
     &::before {
       @include transform(rotate(-7deg));
     }
+
+    img {
+      @include transition(transform .5s);
+      @include transform(rotate(-5deg));
+    }
   }
 
   &::after,
@@ -37,6 +42,8 @@ $border-radius: '250px / 40px';
   img {
     border: 6px solid #fff;
     cursor: pointer;
+    height: 150px;
+    width: 150px;
   }
 
   &::after,
@@ -44,9 +51,7 @@ $border-radius: '250px / 40px';
     @include box-shadow(2px 2px 5px rgba(0, 0, 0, .3));
     @include transition(.3s);
     content: '';
-    height: 200px;
     position: absolute;
-    width: 200px;
     z-index: -1;
   }
 
@@ -63,10 +68,5 @@ $border-radius: '250px / 40px';
     background: #eff4de;
     left: -10px;
     top: 0;
-  }
-
-  img {
-    height: 200px;
-    width: 200px;
   }
 }

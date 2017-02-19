@@ -13,7 +13,12 @@ export default Ember.Component.extend({
   firstImage: Ember.computed('model', function() {
     return this.get('model').get('firstObject');
   }),
-  didInsertElement: function() {
+  didInsertElement() {
     $('#' + this.get('carouselId')).carousel();
+  },
+  actions: {
+    selectImages() {
+      this.sendAction('selectImages', this.get('model'));
+    }
   }
 });

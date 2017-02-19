@@ -1,5 +1,17 @@
 {{#each sortedProjects as |project|}}
   {{project-item
     model=project
+    selectImages="selectImages"
   }}
 {{/each}}
+
+{{#modal-window
+  flex-modal=true
+  modal-id="image-modal"
+  modal-title=modal-title
+}}
+  {{image-carousel
+    carousel-id="image-carousel"
+    model=images
+  }}
+{{/modal-window}}

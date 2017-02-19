@@ -1,3 +1,82 @@
-.modal-dialog {
-  width: 90%;
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 80%;
+  }
+}
+
+.modal {
+  &-body {
+    .button-container {
+      @include display-flex;
+      @include flex-direction(row);
+      justify-content: center;
+    }
+
+    .img-responsive {
+      @include display-flex;
+      @include flex(1);
+    }
+
+    .result-wrapper {
+      max-height: 500px;
+    }
+
+    object {
+      &.img-responsive {
+        min-height: 500px;
+      }
+    }
+
+    @include box-sizing(border-box);
+    @include display-flex;
+    @include flex(1);
+    @include flex-direction(column);
+  }
+
+  &-content {
+    &.ui-resizable {
+      @include display-flex;
+      @include flex-direction(column);
+    }
+  }
+
+  &-dialog {
+    margin: 10px auto;
+  }
+
+  &-footer {
+    .button-container {
+      @include display-flex;
+      justify-content: center;
+    }
+  }
+
+  &-title {
+    @include user-select(none);
+    cursor: default;
+  }
+}
+
+.confirm-box {
+  .modal-header,
+  .modal-footer {
+    padding: 10px 15px;
+  }
+
+  .button-container {
+    button {
+      @include box-sizing(content-box);
+      margin: 0 2px;
+      width: 30%;
+    }
+
+    margin: 0;
+  }
+}
+
+.print-modal {
+  .modal-body {
+    max-height: 500px;
+    overflow: auto;
+  }
 }

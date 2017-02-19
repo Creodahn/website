@@ -8,8 +8,10 @@
     {{else}}
       <section class="container" style={{make-safe style}}>
         {{nav-bar}}
-        {{outlet}}
-        {{page-footer}}
+        <div class="fixed-height">
+          {{outlet}}
+        </div>
+        {{page-footer login="login"}}
       </section>
     {{/if}}
   {{/title-card}}

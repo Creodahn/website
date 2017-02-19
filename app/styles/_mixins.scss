@@ -1,61 +1,152 @@
 /*Mixins*/
 @mixin animation($anim) {
-  -webkit-animation: $anim;
-  -moz-animation: $anim;
-  -o-animation: $anim;
-  animation: $anim;
+  @include prefixed(animation, $anim);
+}
+
+@mixin animation-delay ($settings) {
+  @include prefixed(animation-delay, $settings);
+}
+
+@mixin animation-duration ($settings) {
+  @include prefixed(animation-duration, $settings);
 }
 
 @mixin appearance($option) {
-  -webkit-appearance: $option;
-  -moz-appearance: $option;
-  appearance: $option;
+  @include prefixed(appearance, $option);
 }
 
-@mixin background-size($size) {
-  -webkit-background-size: $size;
-  -moz-background-size: $size;
-  -o-background-size: $size;
-  background-size: $size;
+@mixin backface-visibility($visibility) {
+  @include prefixed(backface-visibility, $visibility);
 }
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+  @include prefixed(border-radius, $radius);
 }
 
 @mixin box-shadow($shadows...) {
-  -webkit-box-shadow: $shadows;
-  -moz-box-shadow: $shadows;
-  box-shadow: $shadows;
+  @include prefixed(box-shadow, $shadows);
+}
+
+@mixin box-sizing($sizing) {
+  @include prefixed(box-sizing, $sizing);
+}
+
+@mixin btn-basic($color) {
+  @include border-radius(4px);
+  @include font-size(18px);
+  @include transition(all .2s ease);
+  @include user-select(none);
+  background: transparent;
+  border: solid 2px $color;
+  margin: 0 5px;
+  padding: 10px 20px;
+
+  &:not(:disabled) {
+    &.active {
+      background: $color;
+      border-color: $color;
+      color: $connect-off-white;
+    }
+
+    &.hvr-sweep-to-left,
+    &.hvr-sweep-to-right {
+      border-color: $color;
+
+      &::before {
+        @include border-radius(0);
+        background-color: $color;
+      }
+    }
+
+    &:not(.active) {
+      &:not(:hover) {
+        &:not(:focus) {
+          background-color: $white;
+          border-color: $color;
+          color: $color;
+        }
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
+    &:hover {
+      &:not(.hvr-radial-out) {
+        &:not(.hvr-sweep-to-left) {
+          &:not(.hvr-sweep-to-right) {
+            background: $color;
+            border-color: $color;
+            color: $connect-off-white;
+          }
+        }
+
+        .hvr-sweep-to-left,
+        .hvr-sweep-to-right {
+          border: 2px solid $color;
+        }
+      }
+    }
+  }
+
+  &:disabled {
+    border-color: $connect-light-gray;
+    color: $connect-light-gray;
+
+    &:hover {
+      background: transparent;
+      border-color: $connect-light-gray;
+      color: $connect-light-gray;
+    }
+  }
+
+  &.hvr-sweep-to-left,
+  &.hvr-sweep-to-right {
+    &.active {
+      @include box-shadow(none);
+    }
+  }
 }
 
 @mixin display-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  @if $use-old-webkit == true {
+    display: #{$webkit}box;
+  }
+
+  @if $use-webkit == true {
+    display: #{$webkit}flex;
+  }
+
+  @if $use-ms == true {
+    display: #{$ms}flexbox;
+  }
+
   display: flex;
 }
 
 @mixin filter($filter) {
-  -webkit-filter: $filter;
-  filter: $filter;
+  @include prefixed(filter, $filter);
 }
 
 @mixin flex($flex) {
-  -webkit-box-flex: $flex;
-  -webkit-flex: $flex;
-  -ms-flex: $flex;
+  @if $use-old-webkit == true {
+    #{$webkit}box-flex: $flex;
+  }
+
+  @if use-webkit == true {
+    #{$webkit}flex: $flex;
+  }
+
+  @if use-ms == true {
+    #{$ms}flex: $flex;
+  }
+
   flex: $flex;
 }
 
 @mixin flex-direction($direction) {
-  -webkit-flex-direction: $direction;
-  -moz-flex-direction: $direction;
-  -ms-flex-direction: $direction;
-  flex-direction: $direction;
+  @include prefixed(flex-direction, $direction);
 }
 
 @mixin font-size($size) {
@@ -63,69 +154,110 @@
   font-size: calculate-rem($size);
 }
 
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content
+// prefix keyframes
+@mixin keyframes($name) {
+  @if $use-webkit == true {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
   }
 
-  @-moz-keyframes #{$animation-name} {
-    @content
+  @if $use-moz == true {
+    @-moz-keyframes #{$name} {
+      @content;
+    }
   }
 
-  @-ms-keyframes #{$animation-name} {
-    @content
+  @if $use-ms == true {
+    @-ms-keyframes #{$name} {
+      @content;
+    }
   }
 
-  @-o-keyframes #{$animation-name} {
-    @content
+  @if $use-o == true {
+    @-o-keyframes #{$name} {
+      @content;
+    }
   }
 
-  @keyframes #{$animation-name} {
-    @content
+  @keyframes #{$name} {
+    @content;
   }
+}
+
+@mixin linear-gradient-bkgrnd($props...) {
+  background-image: -webkit-linear-gradient($props);
+  background-image: -moz-linear-gradient($props);
+  background-image: -o-linear-gradient($props);
+  background-image: linear-gradient($props);
+}
+
+@mixin osx-font-smoothing($prop) {
+  #{$moz}osx-font-smoothing: $prop;
+}
+
+// prefix declarations
+@mixin prefixed($property, $value) {
+  @if $use-webkit == true {
+    #{$webkit}#{$property}: #{$value};
+  }
+
+  @if $use-moz == true {
+    #{$moz}#{$property}: #{$value};
+  }
+
+  @if $use-ms == true {
+    #{$ms}#{$property}: #{$value};
+  }
+
+  @if $use-o == true {
+    #{$o}#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
 }
 
 @mixin transform($transform) {
-  -webkit-transform: $transform;
-  -moz-transform: $transform;
-  -ms-transform: $transform;
-  transform: $transform;
+  @include prefixed(transform, $transform);
+}
+
+@mixin transform-origin($origin) {
+  @include prefixed(transform-origin, $origin);
 }
 
 @mixin transition($transition) {
-  -webkit-transition: $transition;
-  -moz-transition: $transition;
-  -o-transition: $transition;
-  transition: $transition;
+  @include prefixed(transition, $transition);
 }
 
 @mixin user-select($option) {
   @if $option == none {
     &:not(button) {
-      &:not(a) {
-        &:not(.title-card) {
-          cursor: default;
-        }
+      &:not(.clickable) {
+        cursor: default;
       }
     }
 
-    a,
     button,
-    .title-card {
+    .clickable {
       cursor: pointer;
     }
   }
-  -webkit-touch-callout: $option;
-  -webkit-user-select: $option;
-  -khtml-user-select: $option;
-  -moz-user-select: $option;
-  -ms-user-select: $option;
-  user-select: $option;
+  @include prefixed(touch-callout, $option);
+  @include prefixed(user-select, $option);
 }
 
 @mixin white-space {
+  @if $use-mox == true {
+    white-space: #{$moz}pre-wrap;
+  }
+
+  @if $use-old-o == true {
+    white-space: -pre-wrap;
+  }
+
+  @if $use-o == true {
+    white-space: -o-pre-wrap;
+  }
+
   white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -pre-wrap;
-  white-space: -o-pre-wrap;
 }

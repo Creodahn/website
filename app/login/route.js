@@ -23,5 +23,8 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
         this.set('error', (reason.error || this.get('genericError')));
       }).bind(this));
     },
+    cancel() {
+      this.transitionTo('main.about-me');
+    }
   }
 });

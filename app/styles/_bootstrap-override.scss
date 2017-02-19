@@ -1,0 +1,28 @@
+.modal-open {
+  .modal {
+    &.flex-modal {
+      & > .modal-dialog {
+        & > .modal-content {
+          @include display-flex;
+          @include flex(1);
+          @include flex-direction(column);
+        }
+
+        @include display-flex;
+        align-items: center;
+        z-index: 100;
+      }
+
+      @include display-flex;
+    }
+
+    &.login {
+      overflow-y: hidden;
+    }
+
+    z-index: 9999999999;
+  }
+
+  //forced to use this -- weird Bootstrap behavior
+  padding-right: 0 !important;
+}

@@ -38,11 +38,16 @@ html {
 }
 
 main {
+  @include display-flex;
+  @include flex-direction(column);
+  @include flex(1);
+  @include transition(.3s filter);
+
+  height: 100vh;
+
   &.de-emphasize {
     @include filter(blur(5px));
   }
-
-  @include transition(.3s filter);
 }
 
 section {

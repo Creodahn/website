@@ -18,17 +18,33 @@ $white: #fff;
 $black: #000;
 $transparent: rgba(255, 255, 255, 0);
 
+// Browser Prefixes - Which CSS prefixes should be used?
+$use-webkit: true !default;
+$use-old-webkit: true !default;
+$use-moz: true !default;
+$use-ms: true !default;
+$use-old-o: true !default;
+$use-o: true !default;
+
+//Prefixes
+$webkit: -webkit-;
+$moz: -moz-;
+$ms: -ms-;
+$o: -o-;
+
 /*Imports*/
 @import 'functions';
 @import 'mixins';
 
 @import 'about-me';
 @import 'animations';
+@import 'bootstrap-override';
 @import 'buttons';
 @import 'carousel-modifier';
 @import 'contact-me';
 @import 'education';
 @import 'element-base-styles';
+@import 'flex-classes';
 @import 'froala-modifier';
 @import 'images';
 @import 'inputs';
@@ -44,14 +60,20 @@ $transparent: rgba(255, 255, 255, 0);
 
 section {
   &.container {
+    @include border-radius(4px);
     @include box-shadow($shadow);
-    background-clip: content-box;
+    @include display-flex;
+    @include flex(1);
+    @include flex-direction(column);
+
+    background-clip: padding-box;
     background-color: $off-white;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     border: 15px solid $off-white;
-    border-radius: 4px;
-    padding: 0;
+    margin-bottom: 50px;
+    padding: 15px;
+    position: relative;
   }
 }

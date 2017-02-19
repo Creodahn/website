@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-md-4">
+<article class="work-experience">
+  <div class="col-xs-12">
     <div class="bold title">
       {{#if model.url}}
         <a href={{model.url}} target="_blank">{{model.company}}</a>
@@ -7,28 +7,32 @@
         {{model.company}}
       {{/if}}
     </div>
-    <div class="sub-title">
-      {{moment-format model.started "MMMM YYYY"}} to
-      {{#if model.ended}}
-        {{moment-format model.ended "MMMM YYYY"}}
-      {{else}}
-        Present
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="sub-title">
+        {{moment-format model.started "MMMM YYYY"}} to
+        {{#if model.ended}}
+          {{moment-format model.ended "MMMM YYYY"}}
+        {{else}}
+          Present
+        {{/if}}
+      </div>
+    </div>
+    <div class="col-xs-8">
+      <div>
+        {{{model.description}}}
+      </div>
+      {{#if model.projects}}
+        <div>
+          <h3>Projects at this Company</h3>
+          <ul>
+            {{#each model.projects as |project|}}
+              <li>{{project.name}}</li>
+            {{/each}}
+          </ul>
+        </div>
       {{/if}}
     </div>
   </div>
-  <div class="col-md-8">
-    <div>
-      {{{model.description}}}
-    </div>
-    {{#if model.projects}}
-      <div>
-        <h3>Projects at this Company</h3>
-        <ul>
-          {{#each model.projects as |project|}}
-            <li>{{project.name}}</li>
-          {{/each}}
-        </ul>
-      </div>
-    {{/if}}
-  </div>
-</div>
+</article>

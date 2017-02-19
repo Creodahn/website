@@ -14,15 +14,22 @@
   text-align: center;
 }
 
-.flex-layout {
-  @include display-flex;
-  @include flex-direction(column);
-}
+// .flex-layout {
+//   @include display-flex;
+//   @include flex-direction(column);
+// }
+//
+// .flex-layout-row {
+//   @include display-flex;
+//   @include flex(1);
+//   flex-direction: row;
+// }
 
-.flex-layout-row {
-  @include display-flex;
-  @include flex(1);
-  flex-direction: row;
+.fixed-height {
+  border-top: 2px solid $vivid-yellow;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
 }
 
 .hidden {

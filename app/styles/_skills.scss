@@ -5,7 +5,7 @@
   }
 
   .graph-container {
-    &:before {
+    &::before {
       @include filter(blur(20px));
       bottom: 0;
       content: '';

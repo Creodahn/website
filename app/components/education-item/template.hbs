@@ -1,13 +1,17 @@
-<div class="row">
-  <div class="col-md-4">
+<article class="education-item">
+  <div class="col-xs-12">
     <div class="bold title">
       {{model.schoolName}}
     </div>
-    <div class="sub-title">
-      {{moment-format model.started "MMMM YYYY"}} to {{moment-format model.graduated "MMMM YYYY"}}
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="sub-title">
+        {{moment-format model.started "MMMM YYYY"}} to {{moment-format model.graduated "MMMM YYYY"}}
+      </div>
+    </div>
+    <div class="col-xs-8">
+      {{{model.description}}}
     </div>
   </div>
-  <div class="col-md-8">
-    {{{model.description}}}
-  </div>
-</div>
+</article>
