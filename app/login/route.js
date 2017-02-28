@@ -19,6 +19,9 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       // Ensure error message is blank to start
       ctrl.set('error',  null);
 
+      // set login value on session
+      session.set('data.login', username);
+
       // Authenticate
       session.authenticate('authenticator:oauth2', username, password).catch((function(reason) {
         const reasonObj = JSON.parse(reason);
