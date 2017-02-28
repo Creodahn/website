@@ -2,17 +2,15 @@
   {{input
     type="text"
     class="form-control"
-    value=title
+    value=model.title
     id="blog-title"
     placeholder="Enter a Title"
   }}
 </div>
 {{froala-editor
   params=froalaEditor.params
-  value=value
-  focus=(action "focus")
-  contentChanged=(action "contentChanged")
+  update=(action (mut model.content))
 }}
 <div class="center spacer">
-  <button type="button" class="btn btn-success">Save</button>
+  <button {{action "save"}} type="button" class="btn btn-success">Save</button>
 </div>

@@ -1,6 +1,6 @@
 <div class="main">
   {{#modal-window
-    close-on-action=true
+    close-on-action=false
     fireworks=false
     flex-modal=true
     footer-button-label="Submit"
@@ -31,6 +31,10 @@
       name="password"
       value=password
     }}
+    <div class="top-spacer">
+      {{status-messages
+        error=error
+      }}
+    </div>
   {{/modal-window}}
-
 </div>

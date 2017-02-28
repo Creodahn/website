@@ -1,0 +1,9 @@
+<article class="blog-post">
+  <header class="title">{{post.title}}</header>
+  <section class="post-content">
+    {{{post.content}}}
+  </section>
+  <footer class="sub-title">
+    {{post.person.name}}, {{moment-format post.createdAt "M/D/YY, h:mm a"}}
+  </footer>
+</article>

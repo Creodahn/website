@@ -1,1 +1,5 @@
-{{outlet}}
+{{#each model as |post|}}
+  {{blog-post
+    post=post
+  }}
+{{/each}}

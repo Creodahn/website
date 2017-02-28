@@ -7,7 +7,6 @@ export default Ember.Controller.extend({
       $('.title-card').switchClass('content-section title-card', 'container small-title');
 
       this.set('fullTitle', false);
-      // this.replaceRoute('main.about-me');
       this.transitionToRoute('main.about-me');
     }
   }

@@ -1,8 +1,10 @@
+.blog-post,
 .education-item,
 .work-experience {
   background-color: rgba($light-orange, .8);
 }
 
+.blog-post,
 .education-item,
 .project-item,
 .work-experience {
@@ -17,12 +19,33 @@
     border-left: 1px solid $black;
   }
 
+  .post-content {
+    @include font-size(16px);
+  }
+
   .sub-title {
     margin-left: 15px;
   }
 
   .title {
     @include font-size(22px);
+    padding-bottom: 5px;
+  }
+}
+
+.blog-post {
+  .post-content {
+    padding: 10px;
+  }
+
+  .sub-title {
+    border-top: 2px solid $black;
+    margin: 0;
+    padding-top: 5px;
+  }
+
+  .title {
+    border-bottom: 2px solid $black;
     padding-bottom: 5px;
   }
 }

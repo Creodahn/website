@@ -1,15 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  beforeModel: function() {
+  beforeModel() {
     this.controllerFor('main').set('style', '');
   },
-  model: function() {
+  model() {
     return this.modelFor('main').get('skills').then((skills) => {
       return skills;
     });
   },
-  afterModel: function() {
+  afterModel() {
     this.controllerFor('main').set('style', 'background-image: url(assets/imgs/skills.jpg)');
   }
 });

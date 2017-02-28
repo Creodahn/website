@@ -7,7 +7,7 @@ export default OAuth2PasswordGrant.extend({
   refreshAccessTokens: true,
   serverTokenRevocationEndpoint: `${ENV.APP.apiURL}/logout`,
   authenticate(username, password) {
-    return new Ember.RSVP.Promise((resolve, reject) => {
+    return new Ember.RSVP.Promise((function(resolve, reject) {
       Ember.$.ajax({
         url: this.serverTokenEndpoint,
         type: 'POST',
@@ -29,6 +29,6 @@ export default OAuth2PasswordGrant.extend({
           reject(response);
         });
       });
-    });
+    }).bind(this));
   },
 });

@@ -1,3 +1,45 @@
+* {
+  .auto {
+    &-center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &-height {
+      height: auto;
+    }
+  }
+
+  &.hide {
+    &-horizontal,
+    &-horizontal-vertical,
+    &-vertical {
+      @include box-sizing(border-box);
+      @include transition(.3s);
+
+      border: 0;
+      margin: 0;
+      min-height: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    &-horizontal,
+    &-horizontal-vertical {
+      height: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    &-horizontal-vertical,
+    &-vertical {
+      padding-left: 0;
+      padding-right: 0;
+      width: 0;
+    }
+  }
+}
+
 .bold {
   font-weight: bold;
 }
@@ -13,17 +55,6 @@
 .center {
   text-align: center;
 }
-
-// .flex-layout {
-//   @include display-flex;
-//   @include flex-direction(column);
-// }
-//
-// .flex-layout-row {
-//   @include display-flex;
-//   @include flex(1);
-//   flex-direction: row;
-// }
 
 .fixed-height {
   border-top: 2px solid $vivid-yellow;

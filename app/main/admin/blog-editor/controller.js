@@ -12,15 +12,15 @@ export default Ember.Controller.extend({
 
   actions: {
   // For more events refer: 'https://www.froala.com/wysiwyg-editor/docs/events'
-    contentChanged: function(event, editor) {
+    contentChanged(e, editor) {
       console.log("Content Changed");
-      console.log(event);
+      console.log(e);
       console.log(editor);
     },
-    focus: function(event, editor) {
+    focus(e, editor) {
       console.log("Focus");
-      console.log(event);
+      console.log(e);
       console.log(editor);
-    },
+    }
   },
 });
