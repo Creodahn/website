@@ -6,12 +6,16 @@
   }}
     {{#if fullTitle}}
     {{else}}
-      <section class="container" style={{make-safe style}}>
-        {{nav-bar}}
-        <div class="fixed-height">
+      <section class="container">
+        {{nav-bar
+          isAuthenticated=isAuthenticated
+          login="login"
+          logout="logout"
+        }}
+        <div class="fixed-height" style={{make-safe style}}>
           {{outlet}}
         </div>
-        {{page-footer login="login"}}
+        {{page-footer}}
       </section>
     {{/if}}
   {{/title-card}}

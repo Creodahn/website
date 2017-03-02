@@ -4,7 +4,6 @@
   @include flex-direction(column);
   @include user-select(none);
   font-family: 'Rock Salt', cursive;
-  height: 100vh;
   padding: 20px;
   position: relative;
 
@@ -28,7 +27,8 @@
     font-weight: bold;
     margin: 0;
 
-    h1 {
+    h1,
+    object {
       @include font-size(56px);
       border-bottom: 2px inset $vivid-yellow;
       margin: 0;

@@ -1,0 +1,131 @@
+.loading-mask {
+  display: none;
+  text-align: center;
+
+  &:not(.loading-msg) {
+    div {
+      @include transform(translateY(-50%));
+      @include animation(play .8s steps(19) infinite);
+      // background: url('images/loading.png') left center;
+      display: inline-block;
+      height: 36px;
+      position: relative;
+      top: 50%;
+      width: 36px;
+    }
+  }
+
+  &.loading-msg {
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 9999;
+
+    &.busy {
+      @include animation(reveal 1s);
+      display: block;
+      position: fixed;
+    }
+
+    &.loading-backdrop {
+      position: relative;
+
+      &::before {
+        @include filter(blur(4px));
+        // background: url('images/background_two.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        bottom: 0;
+        content: '';
+        height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: auto;
+      }
+    }
+
+    & > div {
+      background-color: transparent;
+    }
+
+    & > .container-flex {
+      @include display-flex;
+      @include flex(1);
+      @include flex-direction(column);
+
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .loading-form {
+      @include box-shadow($shadow);
+      @include filter(blur(-20px));
+      background: rgba(255, 255, 255, .75);
+      border-radius: 5px;
+      display: inline-block;
+      max-width: 350px;
+      padding: 30px 40px;
+      text-align: center;
+      width: 100%;
+
+      h1 {
+        @include font-size(60px);
+        border-bottom: 4px solid $vivid-yellow;
+        font-family: 'Rock Salt', cursive;
+        text-shadow: 1px 1px 1px $vivid-yellow;
+      }
+
+      object {
+        width: 100%;
+      }
+    }
+
+    .loading-img {
+      .loader {
+        @include transform(translateY(-50%));
+        @include animation(play .8s steps(19) infinite);
+        // background: url('images/loading.png') left center;
+        display: inline-block;
+        height: 36px;
+        margin-top: 30px;
+        position: relative;
+        top: 50%;
+        width: 36px;
+      }
+    }
+  }
+
+  &.busy {
+    @include border-radius(inherit);
+    background: rgba(0, 0, 0, .45);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+}
+
+.main {
+  &.load-blur {
+    @include filter(blur(4px));
+  }
+}
+
+.waiting {
+  margin: 10px 0;
+
+  span {
+    img {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}

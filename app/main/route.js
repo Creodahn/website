@@ -6,6 +6,11 @@ export default Ember.Route.extend({
   model() {
     return this.store.findRecord('person', 1);
   },
+  setupController(controller, model) {
+    this._super(controller, model);
+
+    controller.set('isAuthenticated', this.get('session.isAuthenticated'));
+  },
   actions: {
     didTransition() {
       $('.title-card').switchClass('container small-title', 'content-section title-card');
@@ -14,6 +19,9 @@ export default Ember.Route.extend({
     },
     login() {
       this.transitionTo(this.get('session.isAuthenticated') ? 'main.admin' : 'login');
+    },
+    logout() {
+      this.get('session').invalidate();
     }
   }
 });

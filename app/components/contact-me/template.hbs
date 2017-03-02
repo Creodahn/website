@@ -4,15 +4,21 @@
     <div class="body">
       <h3 class="bold center">If you like what you see on my website, let me know!</h3>
       <ul class="nav nav-pills nav-stacked">
-        <li>
-          <a href="mailto:{{model.email}}" class="btn btn-contact btn-email">Send Me an Email!</a>
-        </li>
-        <li>
-          <a class="btn btn-contact btn-linkedin">See My Profile!</a>
-        </li>
-        <li>
-          <a class="btn btn-contact">View My Formal Resume!</a>
-        </li>
+        {{#if model.email}}
+          <li>
+            <a href="mailto:{{model.email}}" class="btn btn-contact btn-email">Send Me an Email!</a>
+          </li>
+        {{/if}}
+        {{#if model.linkedin}}
+          <li>
+            <a href={{model.linkedin}} target="_blank" class="btn btn-contact btn-linkedin">See My Profile!</a>
+          </li>
+        {{/if}}
+        {{#if model.resumeUrl}}
+          <li>
+            <a  href={{model.resumeUrl}} target="_blank" class="btn btn-contact">View My Formal Resume!</a>
+          </li>
+        {{/if}}
       </ul>
     </div>
   </article>

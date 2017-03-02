@@ -40,6 +40,18 @@
           Blog Posts
         {{/link-to}}
       </li>
+      {{#if isAuthenticated}}
+        <li role="presentation" data-toggle="pill">
+          {{#link-to "main.admin"}}Admin{{/link-to}}
+        </li>
+      {{/if}}
+      <li role="presentation" data-toggle="pill">
+        {{#if isAuthenticated}}
+          <a {{action "logout"}} href="">Log Out</a>
+        {{else}}
+          <a {{action "login"}} href="">Log In</a>
+        {{/if}}
+      </li>
     </ul>
   </div>
 </nav>

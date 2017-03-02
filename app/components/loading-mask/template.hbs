@@ -1,0 +1,14 @@
+<div id="loading-mask" class="{{if show 'busy'}} loading-mask loading-msg">
+  <div class="container-flex">
+    <div class="loading-form">
+      <h1>Loading</h1>
+      <div class="loading-img" style="position: relative">
+        {{#if supportsSVG}}
+          <img src="/assets/svg/hourglass.svg">
+        {{else}}
+          <div class="loader"></div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

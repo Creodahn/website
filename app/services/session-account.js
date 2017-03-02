@@ -30,7 +30,7 @@ export default Ember.Service.extend({
         }
       }).then(function(records) {
         return records.toArray()[0];
-      })
+      });
     } else {
       return null;
     }

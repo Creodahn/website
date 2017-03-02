@@ -49,6 +49,7 @@ $o: -o-;
 @import 'images';
 @import 'inputs';
 @import 'layout';
+@import 'loading';
 @import 'modal-modifier';
 @import 'nav-bar';
 @import 'projects';
@@ -66,14 +67,18 @@ section {
     @include flex(1);
     @include flex-direction(column);
 
-    background-clip: padding-box;
     background-color: $off-white;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
     border: 15px solid $off-white;
     margin-bottom: 50px;
     padding: 15px;
     position: relative;
+
+    & > .fixed-height {
+      background-clip: padding-box;
+      background-color: $off-white;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
   }
 }

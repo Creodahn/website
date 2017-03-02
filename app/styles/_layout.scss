@@ -17,13 +17,14 @@
     position: relative;
     text-align: center;
 
-    &:nth-child(odd) {
-      @include box-shadow($shadow);
-    }
+    // &:nth-child(odd) {
+    //   @include box-shadow($shadow);
+    // }
   }
 }
 
 .page-footer {
+  background-color: $off-white;
   border-top: 2px solid $vivid-yellow;
   padding-top: 3px;
   width: auto;

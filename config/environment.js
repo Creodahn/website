@@ -16,7 +16,8 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      apiURL: 'http://localhost:3000'
+      // apiURL: 'http://localhost:3000'
+      apiURL: 'https://personal-website-backend-api.herokuapp.com'
     }
   };
 
@@ -30,7 +31,7 @@ module.exports = function(environment) {
   ENV.contentSecurityPolicy = {
     'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
     'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-    'connect-src': "'self' http://localhost:3000",
+    'connect-src': "'self' http://localhost:3000 https://personal-website-backend-api.herokuapp.com",
     'img-src': "'self' data:",
     'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'media-src': "'self'"
