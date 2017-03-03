@@ -7,9 +7,8 @@
     placeholder="Enter a Title"
   }}
 </div>
-{{froala-editor
-  params=froalaEditor.params
-  update=(action (mut model.content))
+{{wysiwyg-editor
+  content=model.content
 }}
 <div class="center spacer">
   <button {{action "save"}} type="button" class="btn btn-success">Save</button>

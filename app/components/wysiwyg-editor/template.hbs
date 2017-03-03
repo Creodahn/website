@@ -1,0 +1,11 @@
+<div class="form-group">
+  {{#if label}}
+    <label>{{label}}</label>
+  {{/if}}
+
+  {{froala-editor
+    content=content
+    params=froalaEditor.params
+    update=(action (mut content))
+  }}
+</div>

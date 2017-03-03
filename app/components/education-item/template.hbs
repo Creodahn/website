@@ -9,6 +9,11 @@
       <div class="sub-title">
         {{moment-format model.started "MMMM YYYY"}} to {{moment-format model.graduated "MMMM YYYY"}}
       </div>
+      {{#if isAuthenticated}}
+        <div class="center">
+          <button {{action "select"}} class="btn">Edit</button>
+        </div>
+      {{/if}}
     </div>
     <div class="col-xs-8">
       {{{model.description}}}

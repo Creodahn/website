@@ -15,7 +15,10 @@ export default OAuth2PasswordGrant.extend({
           username,
           password
         }),
-        contentType: 'application/vnd.api+json;charset=utf-8',
+        headers: {
+          Accept: 'application/vnd.api+json',
+          'Content-Type': 'application/vnd.api+json;charset=utf-8',
+        },
         dataType: 'json'
       }).then(function(response) {
         Ember.run(function() {

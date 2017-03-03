@@ -9,5 +9,6 @@ export default DS.Model.extend({
   started: DS.attr('date'),
   url: DS.attr('string'),
   //relationships
+  person: DS.belongsTo('person'),
   projects: DS.hasMany('project')
 });
