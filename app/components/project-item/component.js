@@ -7,7 +7,6 @@ export default Ember.Component.extend({
   }),
   actions: {
     selectImages(images) {
-      console.log('selectImages project-item');
       this.sendAction('selectImages', images, this.get('title'));
     }
   }

@@ -28,6 +28,8 @@ export default Ember.Route.extend({
     selectImages(images, title) {
       const ctrl = this.controller;
 
+      // reset images before selecting the image set
+      ctrl.set('images', null);
       ctrl.set('images', images);
       ctrl.set('modal-title', title);
     },
