@@ -6,17 +6,17 @@ module.exports = function(deployTarget) {
     // include other plugin configuration that applies to all deploy targets here
   };
 
-  if (deployTarget === 'development') {
+  if(deployTarget === 'development') {
     ENV.build.environment = 'development';
     // configure other plugins for development deploy target here
   }
 
-  if (deployTarget === 'staging') {
+  if(deployTarget === 'staging') {
     ENV.build.environment = 'production';
     // configure other plugins for staging deploy target here
   }
 
-  if (deployTarget === 'production') {
+  if(deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
   }
