@@ -6,6 +6,9 @@ export default Ember.Component.extend({
     return `${this.get('model.name')} Screenshots`;
   }),
   actions: {
+    select() {
+      this.sendAction('select', this.get('model'));
+    },
     selectImages(images) {
       this.sendAction('selectImages', images, this.get('title'));
     }

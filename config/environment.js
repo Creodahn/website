@@ -12,12 +12,14 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
       // apiURL: 'http://localhost:3000'
       apiURL: 'https://personal-website-backend-api.herokuapp.com'
+    },
+    'ember-froala-editor': {
+      key: '7qinjvnepfsG4hbG-7=='
     }
   };
 

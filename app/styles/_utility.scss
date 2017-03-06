@@ -54,6 +54,15 @@
 
 .center {
   text-align: center;
+
+  &::after,
+  &::before {
+    text-align: center;
+  }
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .fixed-height {

@@ -1,6 +1,16 @@
+{{#if isAuthenticated}}
+  <div class="bottom-spacer flex-row right">
+    <button id="modal-toggle" type="button" class="btn" data-toggle="modal" data-target="#project-editor">
+      Edit
+    </button>
+  </div>
+{{/if}}
+
 {{#each sortedProjects as |project|}}
   {{project-item
+    isAuthenticated=isAuthenticated
     model=project
+    select="select"
     selectImages="selectImages"
   }}
 {{/each}}
@@ -15,3 +25,44 @@
     model=images
   }}
 {{/modal-window}}
+
+{{#if isAuthenticated}}
+  {{#modal-window
+    close-on-action=true
+    flex-modal=true
+    footer-button-caption="Save"
+    footer-button-type="submit"
+    modal-id="project-editor"
+    modal-title="Project Editor"
+    show-footer=true
+    cancelAction="cancel"
+    formAction="save"
+  }}
+    {{text-input
+      label="Project Name"
+      value=selected.name
+    }}
+
+    {{text-input
+      label="Project URL"
+      value=selected.url
+    }}
+
+    {{datetime-picker
+      format="MM/YYYY"
+      label="Started"
+      value=selected.started
+    }}
+
+    {{datetime-picker
+      format="MM/YYYY"
+      label="Ended"
+      value=selected.ended
+    }}
+
+    {{wysiwyg-editor
+      label="Description"
+      content=selected.description
+    }}
+  {{/modal-window}}
+{{/if}}

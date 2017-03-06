@@ -18,6 +18,11 @@
           Present
         {{/if}}
       </div>
+      {{#if isAuthenticated}}
+        <div class="center">
+          <button {{action "select"}} class="btn">Edit</button>
+        </div>
+      {{/if}}
       {{#if model.images}}
         {{photo-stack
           modal-id=modalId
