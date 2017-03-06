@@ -17,14 +17,6 @@ Router.map(function() {
     this.route('work-experience');
     this.route('skills');
     this.route('projects');
-    this.route('admin', function() {
-      this.route('profile-editor');
-      this.route('education-editor');
-      this.route('skill-editor');
-      this.route('work-editor');
-      this.route('project-editor');
-      this.route('blog-editor');
-    });
     this.route('blog');
   });
   this.route('login');
