@@ -25,59 +25,49 @@
     show-footer=true
     formAction="save"
   }}
-    <div class="form-group">
-      <label>Full Name</label>
-      {{input
-        class="form-control"
-        placeholder="Name"
-        value=model.name
-      }}
-    </div>
+    {{text-input
+      label="Full Name"
+      placeholder="Name"
+      value=model.name
+    }}
 
-    <div class="form-group">
-      <label>Title</label>
-      {{input
-        class="form-control"
-        placeholder="Title"
-        value=model.title
-      }}
-    </div>
+    {{text-input
+      label="Title"
+      placeholder="Title"
+      value=model.title
+    }}
 
-    <div class="form-group">
-      <label>Email</label>
-      {{input
-        class="form-control"
-        placeholder="Email"
-        value=model.email
-      }}
-    </div>
+    {{filestack-upload
+      label="Upload Profile Picture"
+      options=profilePickOptions
 
-    <div class="form-group">
-      <label>LinkedIn Profile URL</label>
-      {{input
-        class="form-control"
-        placeholder=""
-        value=model.linkedin
-      }}
-    </div>
+      upload="uploadProfilePic"
+    }}
 
-    <div class="form-group">
-      <label>Resume URL</label>
-      {{input
-        class="form-control"
-        placeholder=""
-        value=model.resumeUrl
-      }}
-    </div>
+    {{text-input
+      label="Email"
+      placeholder="Email"
+      value=model.email
+    }}
 
-    <div class="form-group">
-      <label>Location</label>
-      {{input
-        class="form-control"
-        placeholder="Location"
-        value=model.location
-      }}
-    </div>
+    {{text-input
+      label="LinkedIn Profile URL"
+      placeholder=""
+      value=model.linkedin
+    }}
+
+    {{filestack-upload
+      label="Upload Resume"
+      options=resumePickOptions
+
+      upload="uploadResume"
+    }}
+
+    {{text-input
+      label="Location"
+      placeholder="Location"
+      value=model.location
+    }}
 
     {{datetime-picker
       format="MM/DD/YYYY"

@@ -19,6 +19,11 @@ export default Ember.Route.extend({
     }
 
     controller.set('isAuthenticated', this.get('session.isAuthenticated'));
+    controller.set('pickOptions', {
+      accept: 'image/*',
+      fromSources: 'local_file_system',
+      minFiles: 1
+    });
     controller.set('selected', this.store.createRecord('project'));
     controller.set('sortProperties', ['started:desc']);
     controller.set('sortedProjects', Ember.computed.sort('model', 'sortProperties'));
@@ -32,6 +37,24 @@ export default Ember.Route.extend({
   actions: {
     didTransition() {
       this.controllerFor('main').set('style', 'background-image: url(assets/imgs/project.jpg)');
+    },
+    imageUpload(results) {
+      const imagable = this.controller.get('selected');
+
+      Ember.RSVP.Promise.resolve(this.get('sessionAccount.profile')).then((function(person) {
+        if(results.length) {
+          results.map((function(result) {
+            this.store.createRecord('image', {
+              fileName: result.name,
+              url: result.url,
+              imagable,
+              uploader: person
+            }).save().then((function() {
+              this.refresh()
+            }).bind(this));
+          }).bind(this));
+        }
+      }).bind(this));
     },
     save() {
       const project = this.controller.get('selected');

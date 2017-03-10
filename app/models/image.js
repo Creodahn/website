@@ -5,6 +5,6 @@ export default DS.Model.extend({
   fileName: DS.attr('string'),
   url: DS.attr('string'),
   //relationships
-  imagable: DS.belongsTo('imagable', {polymorphic: true }),
+  imagable: DS.belongsTo('imagable', { polymorphic: true }),
   uploader: DS.belongsTo('person', { inverse: 'images' })
 });

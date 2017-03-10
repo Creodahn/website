@@ -38,26 +38,43 @@
     cancelAction="cancel"
     formAction="save"
   }}
-    {{text-input
-      label="Project Name"
-      value=selected.name
-    }}
+    <section class="flex-display flex-row">
+      <div class="flex-column flex-display flex-spacer side-padding">
+        {{text-input
+          label="Project Name"
+          value=selected.name
+        }}
+      </div>
+      <div class="flex-column flex-display flex-spacer side-padding">
+        {{text-input
+          label="Project URL"
+          value=selected.url
+        }}
+      </div>
+    </section>
 
-    {{text-input
-      label="Project URL"
-      value=selected.url
-    }}
+    <section class="flex-display flex-row">
+      <div class="flex-column flex-display flex-spacer side-padding">
+        {{datetime-picker
+          format="MM/YYYY"
+          label="Started"
+          value=selected.started
+        }}
+      </div>
+      <div class="flex-column flex-display flex-spacer side-padding">
+        {{datetime-picker
+          format="MM/YYYY"
+          label="Ended"
+          value=selected.ended
+        }}
+      </div>
+    </section>
 
-    {{datetime-picker
-      format="MM/YYYY"
-      label="Started"
-      value=selected.started
-    }}
+    {{filestack-upload
+      label="Upload Screenshots"
+      options=pickOptions
 
-    {{datetime-picker
-      format="MM/YYYY"
-      label="Ended"
-      value=selected.ended
+      upload="imageUpload"
     }}
 
     {{wysiwyg-editor

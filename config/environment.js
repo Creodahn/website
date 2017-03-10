@@ -45,14 +45,14 @@ module.exports = function(environment) {
     ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.apiURL = 'http://localhost:3000';
+    ENV.APP.apiURL = 'http://localhost:3000';
   }
 
   if(environment === 'test') {
     // Testem prefers this...
     ENV.rootURL = '/';
     ENV.locationType = 'none';
-    ENV.apiURL = 'http://localhost:3000';
+    ENV.APP.apiURL = 'http://localhost:3000';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -62,7 +62,7 @@ module.exports = function(environment) {
   }
 
   if(environment === 'production') {
-
+    ENV.APP.apiURL = 'https://personal-website-backend-api.herokuapp.com';
   }
 
   return ENV;
