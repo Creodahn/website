@@ -4,6 +4,10 @@
   @include display-flex;
   @include flex-direction(column);
   @include user-select(none);
+
+  -ms-flex: 1 0 auto;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
   font-family: 'Rock Salt', cursive;
   padding: 20px;
   position: relative;

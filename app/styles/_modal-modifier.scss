@@ -41,7 +41,7 @@
   }
 
   &-dialog {
-    margin: 10px auto;
+    margin: 10px 150px;
   }
 
   &-footer {
@@ -64,13 +64,13 @@
   }
 
   .button-container {
+    margin: 0;
+
     button {
       @include box-sizing(content-box);
       margin: 0 2px;
       width: 30%;
     }
-
-    margin: 0;
   }
 }
 
