@@ -50,7 +50,7 @@ export default Ember.Route.extend({
               imagable,
               uploader: person
             }).save().then((function() {
-              this.refresh()
+              this.refresh();
             }).bind(this));
           }).bind(this));
         }
