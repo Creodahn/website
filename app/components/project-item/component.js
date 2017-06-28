@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  //computed properties
+  // computed properties
   title: Ember.computed('model.name', function() {
     return `${this.get('model.name')} Screenshots`;
   }),

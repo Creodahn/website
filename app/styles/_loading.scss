@@ -6,7 +6,7 @@
     div {
       @include transform(translateY(-50%));
       @include animation(play .8s steps(19) infinite);
-      // background: url('images/loading.png') left center;
+      //  background: url('images/loading.png') left center;
       display: inline-block;
       height: 36px;
       position: relative;
@@ -35,7 +35,7 @@
 
       &::before {
         @include filter(blur(4px));
-        // background: url('images/background_two.jpeg') no-repeat center center fixed;
+        //  background: url('images/background_two.jpeg') no-repeat center center fixed;
         background-size: cover;
         bottom: 0;
         content: '';
@@ -89,7 +89,7 @@
       .loader {
         @include transform(translateY(-50%));
         @include animation(play .8s steps(19) infinite);
-        // background: url('images/loading.png') left center;
+        //  background: url('images/loading.png') left center;
         display: inline-block;
         height: 36px;
         margin-top: 30px;

@@ -6,6 +6,6 @@ export default DS.Model.extend(Imagable, {
   description: DS.attr('string'),
   title: DS.attr('string'),
   updatedAt: DS.attr('date'),
-  //relationships
+  // relationships
   person: DS.belongsTo('person')
 });

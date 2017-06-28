@@ -1,4 +1,4 @@
-/*Layout*/
+/* Layout */
 .content-section,
 .name,
 .title {
@@ -17,9 +17,9 @@
     position: relative;
     text-align: center;
 
-    // &:nth-child(odd) {
-    //   @include box-shadow($shadow);
-    // }
+    //  &:nth-child(odd) {
+    //    @include box-shadow($shadow);
+    //  }
   }
 }
 

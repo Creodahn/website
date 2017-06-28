@@ -15,13 +15,13 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
             ctrl = this.controller,
             session = this.get('session');
 
-      // Ensure error message is blank to start
+      //  Ensure error message is blank to start
       ctrl.set('error',  null);
 
-      // set login value on session
+      //  set login value on session
       session.set('data.login', username);
 
-      // Authenticate
+      //  Authenticate
       session.authenticate('authenticator:oauth2', username, password).catch((function(reason) {
         const reasonObj = JSON.parse(reason);
 

@@ -1,17 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // attributes
+  //  attributes
   tagName: '',
-  // computed properties
+  //  computed properties
   isDev: Ember.computed('environment', function() {
     return this.get('environment') === 'development';
   }),
-  // hooks
+  //  hooks
   didInsertElement() {
     $(this.element).attr('role', 'navigation');
   },
-  // actions
+  //  actions
   actions: {
     login() {
       this.sendAction('login');

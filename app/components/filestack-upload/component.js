@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // attributes
+  //  attributes
   tagName: '',
-  // hooks
+  //  hooks
   didInsertElement() {
     Ember.run.scheduleOnce('afterRender', (function() {
       this.set('client', filestack.init('ACUeLE17FQ2OeYH7cxPEHz'));
@@ -14,7 +14,7 @@ export default Ember.Component.extend({
 
     this.set('options', opts ? opts : {});
   },
-  // actions
+  //  actions
   actions: {
     showPicker() {
       this.get('client').pick(this.get('options')).then((function(result) {

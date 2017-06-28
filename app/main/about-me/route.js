@@ -2,16 +2,16 @@ import Ember from 'ember';
 const { service } = Ember.inject;
 
 export default Ember.Route.extend({
-  // attributes
-  session: service('session'),
-  sessionAccount: service('session-account'),
-  // hooks
+  //  attributes
+  session: service(),
+  sessionAccount: service(),
+  //  hooks
   setupController(controller, model) {
     this._super(controller, model);
 
     controller.set('isAuthenticated', this.get('session.isAuthenticated'));
     controller.set('profilePickOptions', {
-      accept: 'image/*',
+      accept: 'image/* ',
       fromSources: 'local_file_system',
       maxFiles: 1,
       minFiles: 1
@@ -23,7 +23,7 @@ export default Ember.Route.extend({
       minFiles: 1
     });
   },
-  // actions
+  //  actions
   actions: {
     didTransition() {
       this.controllerFor('main').set('style', 'background-image: url(assets/imgs/about-me.jpg)');

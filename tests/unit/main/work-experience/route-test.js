@@ -6,6 +6,6 @@ moduleFor('route:main/work-experience', 'Unit | Route | main/work experience', {
 });
 
 test('it exists', function(assert) {
-  let route = this.subject();
+  const route = this.subject();
   assert.ok(route);
 });

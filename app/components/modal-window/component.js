@@ -1,10 +1,10 @@
 import Ember from 'ember';
-// const log = Ember.Logger.log;
+//  const log = Ember.Logger.log;
 
 export default Ember.Component.extend({
-  // attributes
+  //  attributes
   tagName: '',
-  // hooks
+  //  hooks
   didRender() {
     const id = `#${this.get('modal-id')}`;
 
@@ -28,7 +28,7 @@ export default Ember.Component.extend({
       $(`${id}-cancel`).attr('data-dismiss', 'modal');
     }
   },
-  // actions
+  //  actions
   actions: {
     cancelAction() {
       this.sendAction('cancelAction');

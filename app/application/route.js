@@ -8,7 +8,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     didTransition() {
       $('body').removeClass('modal-open');
     },
-    error(error/* , transition */) {
+    error(error/*  , transition  */) {
       if(error) {
         this.transitionTo('error');
       }

@@ -27,7 +27,8 @@ export default OAuth2PasswordGrant.extend({
           });
         });
       }, function(xhr) {
-        var response = xhr.responseText;
+        const response = xhr.responseText;
+
         Ember.run(function() {
           reject(response);
         });

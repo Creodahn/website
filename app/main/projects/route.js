@@ -2,13 +2,17 @@ import Ember from 'ember';
 const { service } = Ember.inject;
 
 export default Ember.Route.extend({
-  // attributes
+  //  attributes
   session: service('session'),
   sessionAccount: service('session-account'),
-  // hooks
+  //  hooks
   model() {
     return this.modelFor('main').get('projects').then(function(projects) {
-      return projects;
+      return projects.map((project) => {
+        project.get('images');
+        project.get('skills');
+        return project;
+      });
     });
   },
   setupController(controller, model) {
@@ -20,7 +24,7 @@ export default Ember.Route.extend({
 
     controller.set('isAuthenticated', this.get('session.isAuthenticated'));
     controller.set('pickOptions', {
-      accept: 'image/*',
+      accept: 'image/* ',
       fromSources: 'local_file_system',
       minFiles: 1
     });
@@ -33,7 +37,7 @@ export default Ember.Route.extend({
       }
     });
   },
-  // actions
+  //  actions
   actions: {
     didTransition() {
       this.controllerFor('main').set('style', 'background-image: url(assets/imgs/project.jpg)');
@@ -73,7 +77,7 @@ export default Ember.Route.extend({
     selectImages(images, title) {
       const ctrl = this.controller;
 
-      // reset images before selecting the image set
+      //  reset images before selecting the image set
       ctrl.set('images', null);
       ctrl.set('images', images);
       ctrl.set('modal-title', title);

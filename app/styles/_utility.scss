@@ -1,3 +1,46 @@
+$alignments: center, left, right;
+$floats: left, right;
+$properties: margin, padding;
+
+$sides: 'bottom', 'horizontal', 'left', 'right', 'top', 'vertical';
+$spacings: ('-lg', 20px), ('-sm', 5px), ('-tiny', 1px), ('', 10px);
+
+@each $align in $alignments {
+  .align-#{$align} {
+    text-align: $align;
+  }
+}
+
+@each $float in $floats {
+  .float-#{$float} {
+    float: $float;
+  }
+}
+
+@each $property in $properties {
+  .no-#{$property} {
+    #{$property}: 0;
+  }
+}
+
+@each $side in $sides {
+  .#{$side} {
+    @each $size, $px in $spacings {
+      $interp: if($size == '', '', #{$size});
+
+      &#{$interp}-spacer {
+        @if $side == 'horizontal' {
+          margin: 0 $px;
+        } @else if $side == 'vertical' {
+          margin: $px 0;
+        } @else {
+          margin-#{$side}: $px;
+        }
+      }
+    }
+  }
+}
+
 * {
   .auto {
     &-center {
@@ -40,14 +83,6 @@
   }
 }
 
-.bold {
-  font-weight: bold;
-}
-
-.bottom-spacer {
-  margin-bottom: 20px;
-}
-
 .bullet-title {
   display: inline-block;
 }
@@ -61,8 +96,11 @@
   }
 }
 
+//  set which cursor the user sees
 .clickable {
-  cursor: pointer;
+  & * {
+    cursor: pointer !important;
+  }
 }
 
 .fixed-height {
@@ -74,6 +112,17 @@
 
 .hidden {
   display: none;
+}
+
+.invisible {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  & > * {
+    @include transition(.5s visibility);
+    visibility: hidden;
+  }
 }
 
 .no-bullets {

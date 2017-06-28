@@ -4,6 +4,11 @@ const { service } = Ember.inject;
 export default Ember.Route.extend({
   session: service('session'),
   sessionAccount: service('session-account'),
+  model() {
+    return this.modelFor('main').get('educations').then((e) => {
+      return e;
+    });
+  },
   setupController(controller, model) {
     const auth = this.get('session.isAuthenticated');
 

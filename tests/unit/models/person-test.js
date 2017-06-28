@@ -67,8 +67,8 @@ test('age is the difference in years between birthDate and today', function(asse
           birthDate: '12/28/1986'
         });
 
-    // causes a warning about a moment deprecation, but passes
-    assert.equal(person.get('age'), expected, `expected ${expected}, got ${person.get('age')}. birth = ${birth}`);
+  // causes a warning about a moment deprecation, but passes
+  assert.equal(person.get('age'), expected, `expected ${expected}, got ${person.get('age')}. birth = ${birth}`);
 });
 
 test('firstName is first slice of name', function(assert) {

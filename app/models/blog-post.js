@@ -5,6 +5,6 @@ import Imagable from '../mixins/imagable';
 export default BaseModel.extend(Imagable, {
   content: DS.attr('string'),
   title: DS.attr('string'),
-  //relationships
+  // relationships
   person: DS.belongsTo('person')
 });

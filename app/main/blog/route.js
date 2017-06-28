@@ -2,10 +2,10 @@ import Ember from 'ember';
 const { service } = Ember.inject;
 
 export default Ember.Route.extend({
-  // attributes
+  //  attributes
   session: service('session'),
   sessionAccount: service('session-account'),
-  // hooks
+  //  hooks
   model() {
     return this.modelFor('main').get('blogPosts');
   },
@@ -15,7 +15,7 @@ export default Ember.Route.extend({
     controller.set('isAuthenticated', this.get('session.isAuthenticated'));
     controller.set('selected', this.store.createRecord('blog-post'));
   },
-  // actions
+  //  actions
   actions: {
     cancel() {
       this.set('selected', this.store.createRecord('blog-post'));

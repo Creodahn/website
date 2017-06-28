@@ -2,13 +2,16 @@ import Ember from 'ember';
 const { service } = Ember.inject;
 
 export default Ember.Route.extend({
-  // attributes
+  //  attributes
   session: service('session'),
   sessionAccount: service('session-account'),
-  // hooks
+  //  hooks
   model() {
     return this.modelFor('main').get('workExperiences').then((exp) => {
-      return exp;
+      return exp.map((e) => {
+        e.get('projects');
+        return e;
+      });
     });
   },
   setupController(controller, model) {
@@ -23,7 +26,7 @@ export default Ember.Route.extend({
     controller.set('sort', ['started:desc']);
     controller.set('sortedWork', Ember.computed.sort('model', 'sort'));
   },
-  // actions
+  //  actions
   actions: {
     cancel() {
       this.set('selected', this.store.createRecord('work-experience'));

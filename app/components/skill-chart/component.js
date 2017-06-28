@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  //attributes
+  // attributes
   chart: null,
   classNames: [],
   tagName: 'section',
-  //computed properties
+  // computed properties
   colors: Ember.computed('model', function() {
     return this.get('model').map(function(item) {
       return item.get('color');
@@ -26,9 +26,9 @@ export default Ember.Component.extend({
       return item.get('name');
     });
   }),
-  //functions
+  // functions
   createChart: function() {
-    const ctx = $('#' + this['chart-id']).get(0).getContext('2d'),
+    const ctx = $(`#${this['chart-id']}`).get(0).getContext('2d'),
           data = {
             labels: this.get('labels'),
             datasets: [
@@ -56,8 +56,8 @@ export default Ember.Component.extend({
           },
           chart = new Chart(ctx, {
             type: 'bar',
-            data: data,
-            options: options
+            data,
+            options
           });
 
     this.set('chart', chart);

@@ -2,10 +2,9 @@
   "name": "personal-website",
   "dependencies": {
     "jquery": "^1.11.3",
-    "jquery-ui": "^1.11.4",
-    "bootstrap": "~3.3.5",
     "Chart.js": "^2.1.4",
     "froala-wysiwyg-editor": "^2.3.3",
-    "font-awesome": "^4.6.3"
+    "semantic-ui": "^2.2.10",
+    "jquery-ui": "^1.12.1"
   }
 }

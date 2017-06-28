@@ -1,7 +1,9 @@
 <section class="about-me">
-  <figure class="profile-picture-container">
-    <img src={{model.profilePicture.url}} alt={{model.profilePicture.fileName}} />
-  </figure>
+  {{#if model.profilePicture}}
+    <figure class="profile-picture-container">
+      <img src="{{model.profilePicture.url}}" alt="{{model.profilePicture.fileName}}" />
+    </figure>
+  {{/if}}
 
   <article class="info">
     <h2 class="bold text-container title">Who Am I?</h2>

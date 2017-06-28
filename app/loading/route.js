@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
 
-    controller.set('supportsSVG', document.implementation.hasFeature('http://www.w3.org/TR/SVG11/feature#Image', '1.1'));
+    controller.set('supportsSVG', document.implementation.hasFeature('http:// www.w3.org/TR/SVG11/feature#Image', '1.1'));
   },
   actions: {
     willTransition() {

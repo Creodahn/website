@@ -1,54 +1,29 @@
-<nav class="bottom-spacer nav-bar">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-
-  <div class="collapse navbar-collapse" id="navbar">
-    <ul class="nav nav-pills nav-justified">
-      <li role="presentation" class="active" data-toggle="pill">
-        {{#link-to "main.about-me"}}
-          About Me
-        {{/link-to}}
-      </li>
-      <li role="presentation" data-toggle="pill">
-        {{#link-to "main.education"}}
-          Education
-        {{/link-to}}
-      </li>
-      <li role="presentation" data-toggle="pill">
-        {{#link-to "main.skills"}}
-          Skills
-        {{/link-to}}
-      </li>
-      <li role="presentation" data-toggle="pill">
-        {{#link-to "main.work-experience"}}
-          Work Experience
-        {{/link-to}}
-      </li>
-      <li role="presentation" data-toggle="pill">
-        {{#link-to "main.projects"}}
-          Projects
-        {{/link-to}}
-      </li>
-      {{#if isDev}}
-        <li role="presentation" data-toggle="pill">
-          {{#link-to "main.blog"}}
-            Blog Posts
-          {{/link-to}}
-        </li>
-      {{/if}}
-      <li role="presentation" data-toggle="pill">
-        {{#if isAuthenticated}}
-          <a {{action "logout"}} href="">Log Out</a>
-        {{else}}
-          <a {{action "login"}} href="">Log In</a>
-        {{/if}}
-      </li>
-    </ul>
+<nav class="ui pointing menu">
+  {{#link-to "main.about-me" class="item"}}
+    About Me
+  {{/link-to}}
+  {{#link-to "main.education" class="item"}}
+    Education
+  {{/link-to}}
+  {{#link-to "main.skills" class="item"}}
+    Skills
+  {{/link-to}}
+  {{#link-to "main.work-experience" class="item"}}
+    Work Experience
+  {{/link-to}}
+  {{#link-to "main.projects" class="item"}}
+    Projects
+  {{/link-to}}
+  {{#if isDev}}
+    {{#link-to "main.blog" class="item"}}
+      Blog Posts
+    {{/link-to}}
+  {{/if}}
+  <div class="right menu">
+    {{#if isAuthenticated}}
+      <a class="item" {{action "logout"}} href="">Log Out</a>
+    {{else}}
+      <a class="item" {{action "login"}} href="">Log In</a>
+    {{/if}}
   </div>
 </nav>

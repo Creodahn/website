@@ -10,13 +10,13 @@ export default function(name, options = {}) {
     beforeEach() {
       this.application = startApp();
 
-      if (options.beforeEach) {
+      if(options.beforeEach) {
         return options.beforeEach.apply(this, arguments);
       }
     },
 
     afterEach() {
-      let afterEach = options.afterEach && options.afterEach.apply(this, arguments);
+      const afterEach = options.afterEach && options.afterEach.apply(this, arguments);
       return Promise.resolve(afterEach).then(() => destroyApp(this.application));
     }
   });

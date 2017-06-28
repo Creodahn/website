@@ -4,7 +4,7 @@ const { service } = Ember.inject;
 export default Ember.Route.extend({
   session: service('session'),
   sessionAccount: service('session-account'),
-  // hooks
+  //  hooks
   model() {
     return this.modelFor('main').get('skills').then((skills) => {
       return skills;
@@ -22,7 +22,7 @@ export default Ember.Route.extend({
     controller.set('selected', this.store.createRecord('skill'));
     controller.set('sortedSkills', Ember.computed.sort('model', 'sort'));
   },
-  // actions
+  //  actions
   actions: {
     didTransition() {
       this.controllerFor('main').set('style', 'background-image: url(assets/imgs/skills.jpg)');

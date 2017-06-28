@@ -1,9 +1,9 @@
-/*Variables*/
+/* Variables */
 $base-font-size: 16px;
 $link-color: #337ab7;
 $shadow: 0 5px 10px -5px rgba(0, 0, 0, .4);
 
-/*Colors*/
+/* Colors */
 $off-white: #faf8f2;
 $lime-green: #18a676;
 $light-orange: #f7eac8;
@@ -18,7 +18,7 @@ $white: #fff;
 $black: #000;
 $transparent: rgba(255, 255, 255, 0);
 
-// Browser Prefixes - Which CSS prefixes should be used?
+//  Browser Prefixes - Which CSS prefixes should be used?
 $use-webkit: true !default;
 $use-old-webkit: true !default;
 $use-moz: true !default;
@@ -26,13 +26,13 @@ $use-ms: true !default;
 $use-old-o: true !default;
 $use-o: true !default;
 
-//Prefixes
+// Prefixes
 $webkit: -webkit-;
 $moz: -moz-;
 $ms: -ms-;
 $o: -o-;
 
-/*Imports*/
+/* Imports */
 @import 'functions';
 @import 'mixins';
 

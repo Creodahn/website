@@ -4,7 +4,7 @@ const { service } = Ember.inject;
 export default Ember.Service.extend({
   session: service('session'),
   store: service(),
-  // computed properties
+  //  computed properties
   profile: Ember.computed('session.data.login', function() {
     const accountLogin = this.get('session.data.login');
 

@@ -7,10 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // due to a bug in Ember 2.11.0, can't declare a custom error route
-  // this.route('error');
+  //  due to a bug in Ember 2.11.0, can't declare a custom error route
+  //  this.route('error');
   this.route('loading');
-  this.route('main', {path: '/'}, function() {
+  this.route('main', { path: '/' }, function() {
     this.route('about-me');
     this.route('education');
     this.route('loading');

@@ -6,14 +6,14 @@ main {
 }
 
 .container {
-  &.small-title {
-    margin-left: 65px;
-    margin-right: 65px;
-  }
+  //  &.small-title {
+  //    margin-left: 65px;
+  //    margin-right: 65px;
+  //  }
 }
 
 .modal-open {
-  //forced to use this -- weird Bootstrap behavior
+  // forced to use this -- weird Bootstrap behavior
   padding-right: 0 !important;
 
   .modal {

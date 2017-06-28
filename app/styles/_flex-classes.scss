@@ -1,91 +1,76 @@
+//  Create classes to easily setup flex grids
+$alignments: center, end, start;
+$directions: column, column-reverse, row, row-reverse;
+$spacer-sizes: ('', 1), ('-double', 2), ('-half', .5), ('triple', 3);
+
 .flex {
+  @each $direction in $directions {
+    &-#{$direction} {
+      @include flex-direction($direction);
+    }
+  }
+
+  @each $size-txt, $size in $spacer-sizes {
+    &#{$size-txt}-spacer {
+      @include flex($size);
+    }
+  }
+
   &-align {
-    &-center {
-      align-items: center;
+    @each $alignment in $alignments {
+      &-#{$alignment} {
+        align-items: if($alignment == 'center', $alignment, flex-#{$alignment});
+      }
     }
 
     &-self {
-      &-end {
-        align-self: flex-end;
-      }
-
-      &-start {
-        align-self: flex-start;
+      @each $alignment in $alignments {
+        &-#{$alignment} {
+          align-self: if($alignment == 'center', $alignment, flex-#{$alignment});
+        }
       }
     }
   }
 
   &-center {
+    align-items: center;
+    justify-content: center;
+
     & > * {
       align-self: center;
     }
-
-    align-items: center;
-    justify-content: center;
-  }
-
-  &-column {
-    @include flex-direction(column);
-  }
-
-  &-column-reverse {
-    @include flex-direction(column-reverse);
   }
 
   &-display {
     @include display-flex;
   }
 
-  &-double-spacer {
-    @include flex(2);
-  }
-
-  &-half-spacer {
-    @include flex(.5);
-  }
-
   &-inline {
-    display: inline-flex;
+    @include display-inline-flex;
   }
 
-  &-justify-end {
-    justify-content: flex-end;
-  }
-
-  &-justify-start {
-    justify-content: flex-start;
+  &-justify {
+    @each $alignment in $alignments {
+      &-#{$alignment} {
+        justify-content: if($alignment == 'center', $alignment, flex-#{$alignment});
+      }
+    }
   }
 
   &-layout {
-    @include display-flex;
-    @include flex-direction(column);
-    // height: 100%;
+    @extend .flex-display;
+    @extend .flex-column;
   }
 
   &-layout-row {
-    @include display-flex;
-    @include flex-direction(row);
+    @extend .flex-display;
+    @extend .flex-row;
+
     height: 100%;
-  }
-
-  &-row {
-    @include flex-direction(row);
-  }
-
-  &-row-reverse {
-    @include flex-direction(row-reverse);
   }
 
   &-space-between {
     justify-content: space-between;
-  }
-
-  &-spacer {
-    @include flex(1);
-  }
-
-  &-triple-spacer {
-    @include flex(3);
   }
 
   &-wrap {

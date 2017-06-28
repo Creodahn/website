@@ -1,4 +1,7 @@
-/*Mixins*/
+/*  Mixins  */
+
+//  leverage SCSS to write less code for styling by using these mixins.
+//  The provide functionality such as auto-prefixing CSS properties
 @mixin animation($anim) {
   @include prefixed(animation, $anim);
 }
@@ -36,6 +39,7 @@
   @include font-size(18px);
   @include transition(all .2s ease);
   @include user-select(none);
+
   background: transparent;
   border: solid 2px $color;
   margin: 0 5px;
@@ -54,6 +58,7 @@
 
       &::before {
         @include border-radius(0);
+
         background-color: $color;
       }
     }
@@ -125,6 +130,22 @@
   display: flex;
 }
 
+@mixin display-inline-flex {
+  @if $use-old-webkit == true {
+    display: #{$webkit}inline-box;
+  }
+
+  @if $use-webkit == true {
+    display: #{$webkit}inline-flex;
+  }
+
+  @if $use-ms == true {
+    display: #{$ms}inline-flexbox;
+  }
+
+  display: inline-flex;
+}
+
 @mixin filter($filter) {
   @include prefixed(filter, $filter);
 }
@@ -154,7 +175,7 @@
   font-size: calculate-rem($size);
 }
 
-// prefix keyframes
+//  prefix keyframes
 @mixin keyframes($name) {
   @if $use-webkit == true {
     @-webkit-keyframes #{$name} {
@@ -196,7 +217,7 @@
   #{$moz}osx-font-smoothing: $prop;
 }
 
-// prefix declarations
+//  prefix declarations
 @mixin prefixed($property, $value) {
   @if $use-webkit == true {
     #{$webkit}#{$property}: #{$value};
@@ -217,6 +238,45 @@
   #{$property}: #{$value};
 }
 
+@mixin scrolling-shadows-horizontal {
+  background-image:
+    /*  Shadows  */
+    linear-gradient(to right, #fff, #fff),
+    linear-gradient(to right, #fff, #fff),
+    /*  Shadow covers  */
+    linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
+    linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));
+
+  background-position: left center, right center, left center, right center;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
+
+	/*  Opera doesn't support this in the shorthand  */
+	background-attachment: local, local, scroll, scroll;
+}
+
+@mixin scrolling-shadows-vertical {
+  background:
+		/*  Shadow covers  */
+		linear-gradient(#fff 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%,
+		/*  Shadows  */
+		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+	background:
+		/*  Shadow covers  */
+		linear-gradient(#fff 30%, rgba(255,255,255,0)),
+		linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%,
+		/*  Shadows  */
+		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+  background-attachment: local, local, scroll, scroll;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+}
+
 @mixin transform($transform) {
   @include prefixed(transform, $transform);
 }
@@ -225,23 +285,30 @@
   @include prefixed(transform-origin, $origin);
 }
 
-@mixin transition($transition) {
-  @include prefixed(transition, $transition);
+@mixin transition($transitions...) {
+  @include prefixed(transition, $transitions);
 }
 
 @mixin user-select($option) {
   @if $option == none {
-    &:not(button) {
-      &:not(.clickable) {
-        cursor: default;
+    &:not(a) {
+      &:not(button) {
+        &:not(select) {
+          &:not(.clickable) {
+            cursor: default;
+          }
+        }
       }
     }
 
+    a,
     button,
+    select,
     .clickable {
       cursor: pointer;
     }
   }
+
   @include prefixed(touch-callout, $option);
   @include prefixed(user-select, $option);
 }

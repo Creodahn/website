@@ -1,8 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  // attributes
+  //  attributes
   username: DS.attr('string'),
-  // relationships
+  //  relationships
   person: DS.belongsTo('person')
 });

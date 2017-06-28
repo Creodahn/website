@@ -33,7 +33,7 @@ test('updatedAt is a date attribute', function(assert) {
   runAttrTest.call(this, assert, 'blog-post', 'updatedAt', 'date', false, new Date());
 });
 
-//relationships
+// relationships
 test('has many images', function(assert) {
   runRelationshipTest.call(this, assert, 'blog-post', 'images', 'hasMany', 'image', 'imagable', false, false);
 });

@@ -6,7 +6,7 @@ module('Unit | Mixin | imagable');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let ImagableObject = Ember.Object.extend(ImagableMixin);
-  let subject = ImagableObject.create();
+  const ImagableObject = Ember.Object.extend(ImagableMixin),
+        subject = ImagableObject.create();
   assert.ok(subject);
 });

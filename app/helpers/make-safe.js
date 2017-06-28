@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export function makeSafe(params/*, hash*/) {
+export function makeSafe(params/* , hash */) {
   return Ember.String.htmlSafe(params[0]);
 }
 

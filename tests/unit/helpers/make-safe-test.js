@@ -5,6 +5,6 @@ module('Unit | Helper | make safe');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = makeSafe([42]);
+  const result = makeSafe([42]);
   assert.ok(result);
 });

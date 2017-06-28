@@ -1,21 +1,21 @@
 import Ember from 'ember';
-// const log = Ember.Logger.log;
+//  const log = Ember.Logger.log;
 
 export default Ember.Component.extend({
-  // attributes
+  //  attributes
   alertType: '',
   error: '',
   success: '',
   tagName: '',
-  // computed properties
+  //  computed properties
   message: Ember.computed('error', 'success', function() {
     return this.get('error') || this.get('success');
   }),
   wrapText: Ember.computed('allowWrap', 'message.length', function() {
     return this.get('message.length') > 0 && this.get('allowWrap');
   }),
-  // observers
-  // set timer when error is received
+  //  observers
+  //  set timer when error is received
   watchError: function() {
     if(this.get('error')) {
       this.set('alertType', 'alert-danger');
@@ -24,7 +24,7 @@ export default Ember.Component.extend({
       }).bind(this)), this.get('timeout'));
     }
   }.observes('error'),
-  // handle showing message
+  //  handle showing message
   watchMessage: function() {
     const element = $(this.element).find('.alert');
 
@@ -36,7 +36,7 @@ export default Ember.Component.extend({
       $(element).removeClass('wrap');
     }
   }.observes('message'),
-  // set timer when success is received
+  //  set timer when success is received
   watchSuccess: function() {
     if(this.get('success')) {
       this.set('alertType', 'alert-success');
@@ -45,7 +45,7 @@ export default Ember.Component.extend({
       }).bind(this)), this.get('timeout'));
     }
   }.observes('success'),
-  // event hooks
+  //  event hooks
   didReceiveAttrs() {
     const t = this.get('timeout'),
           transition = this.get('transition');
