@@ -5,6 +5,7 @@
     "Chart.js": "^2.1.4",
     "froala-wysiwyg-editor": "^2.3.3",
     "semantic-ui": "^2.2.10",
-    "jquery-ui": "^1.12.1"
+    "jquery-ui": "^1.12.1",
+    "semantic-ui-calendar": "^0.0.8"
   }
 }

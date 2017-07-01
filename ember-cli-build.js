@@ -19,6 +19,10 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // Semantic UI Calendar
+  app.import('bower_components/semantic-ui-calendar/dist/calendar.min.css');
+  app.import('bower_components/semantic-ui-calendar/dist/calendar.min.js');
+
   // Chartjs
   app.import('bower_components/Chart.js/dist/Chart.min.js');
 

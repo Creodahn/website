@@ -1,0 +1,297 @@
+// modify default Semantic UI CSS by overriding and supplementing their
+// declarations
+
+body {
+  &.dimmable {
+    &.dimmed {
+      &.scrolling {
+        & > .dimmer {
+          &.modals {
+            overflow: hidden !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+div {
+  &.ui {
+    &.dropdown {
+      &.selection {
+        &:not(.active) {
+          &:focus {
+            border-color: rgba(34, 36, 38, 0.15) !important;
+          }
+        }
+
+        &.active {
+          & > i {
+            &.dropdown {
+              &.icon {
+                border-color: #96c8da;
+              }
+            }
+          }
+          border-bottom-right-radius: 0.28571429rem !important;
+        }
+
+        & > i {
+          &.dropdown {
+            &.icon {
+              border-left: 1px solid rgba(34, 36, 38, 0.15);
+              line-height: .75em;
+              max-height: 100%;
+            }
+          }
+        }
+
+        & > .menu {
+          & > .item {
+            padding: 0.25rem 1.14285714rem !important
+          }
+
+          min-width: auto;
+          width: 86%;
+        }
+
+        line-height: .25em;
+        min-height: 1em;
+      }
+
+      height: auto;
+    }
+  }
+}
+
+main {
+  &.ui {
+    &.grid {
+      & > .column {
+        &.flex-display {
+          @include display-flex;
+        }
+      }
+    }
+  }
+}
+
+.ui {
+  &.button {
+    &.labeled {
+      &.icon {
+        & > .icon {
+          @include transition(1s);
+
+          background-color: transparent;
+        }
+
+        & > .icon-background {
+          background-color: rgba(0, 0, 0, .05);
+          border-bottom-left-radius: inherit;
+          border-top-left-radius: inherit;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 2.57142857em;
+        }
+
+        &:hover {
+          & > .icon {
+            @include transform(rotate(360deg));
+          }
+        }
+      }
+    }
+  }
+
+  &.buttons {
+    & .or {
+      &::before {
+        line-height: 1.7em;
+      }
+    }
+  }
+
+  &.image {
+    &.label {
+      &> .detail {
+        @media screen and (max-width: 320px) {
+          text-indent: -5px;
+        }
+
+        min-width: 100%;
+      }
+
+      & > .detail,
+      & > .icon {
+        @include display-flex;
+        @include flex(1);
+      }
+
+      & > .icon {
+        &.circle,
+        &.sign {
+          &::before {
+            min-width: 15px;
+          }
+
+          font-size: 1.25em;
+          min-width: 15px;
+        }
+
+        & ~ label {
+          line-height: 1.25em;
+        }
+
+        align-self: center;
+        margin: 0;
+        text-align: center;
+      }
+
+      @include display-flex;
+
+      overflow: hidden;
+    }
+  }
+
+  &.input {
+    &.labeled {
+      & div,
+      & textarea {
+        &:disabled {
+          opacity: .45;
+        }
+
+        background-color: #fff;
+        border: 1px solid rgba(34, 36, 38, 0.15);
+        border-bottom-right-radius: 4px;
+        border-left-color: transparent;
+        border-top-right-radius: 4px;
+        color: rgba(0, 0, 0, .87);
+        padding: 8px 15px;
+        resize: none;
+        width: 100%;
+      }
+
+      & > .label {
+        max-width: 50%;
+        min-width: 90px;
+      }
+    }
+  }
+
+  &.message {
+    &.collapsed {
+      & > .detail {
+        opacity: 0;
+      }
+
+      & > .icon-container {
+        & > i {
+          @include display-flex;
+
+          align-items: center;
+          cursor: pointer;
+          font-size: 42px;
+          height: 36px;
+          width: 36px;
+        }
+
+        max-width: 36px;
+      }
+
+      @include border-radius(50%);
+
+      margin: 10px 15px;
+      max-height: 36px;
+      padding: 0;
+      position: absolute;
+      right: auto;
+      top: 0;
+      width: 36px;
+    }
+
+    &:not(.collapsed) {
+      & > .icon-container {
+        & > * {
+          align-self: center;
+        }
+
+        align-items: center;
+        justify-content: center;
+        min-width: 80px;
+      }
+    }
+
+    & > .detail {
+      @include transition(.3s opacity);
+
+      height: 100%;
+      opacity: 1;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    & > .icon-container {
+      & > i {
+        @include transition(.5s font-size);
+      }
+    }
+
+    @include box-shadow($shadow);
+    @include box-sizing(border-box);
+    @include transition(.5s all, .75s border-radius);
+
+    height: auto;
+    left: 0;
+    margin: 10%;
+    max-height: 300px;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 30px;
+    width: 80%;
+    z-index: 50;
+  }
+
+  &.modal {
+    &.loading-mask {
+      z-index: 9999;
+    }
+
+    & > i {
+      &.close {
+        color: #000;
+        right: 1rem;
+        top: 1.0535rem;
+      }
+    }
+
+    & > .content {
+      @include border-radius(4px);
+      @include box-sizing(border-box);
+      @include display-flex;
+      @include flex(1);
+      @include flex-direction(column);
+
+      overflow: hidden;
+    }
+
+    &:not(.loading-mask) {
+      & > .header {
+        box-sizing: content-box;
+        min-height: 25px;
+      }
+    }
+
+    &.loading-mask {
+      & > .header {
+        display: none;
+      }
+    }
+
+    overflow: hidden;
+  }
+}

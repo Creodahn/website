@@ -31,9 +31,6 @@ export default Ember.Route.extend({
     cancel() {
       this.set('selected', this.store.createRecord('work-experience'));
     },
-    didTransition() {
-      this.controllerFor('main').set('style', 'background-image: url(assets/imgs/work.jpg)');
-    },
     save() {
       const exp = this.controller.get('selected');
 

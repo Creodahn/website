@@ -1,4 +1,4 @@
-<div id={{carousel-id}} class="carousel slide" data-ride="carousel" data-interval="false">
+{{!-- <div id={{carousel-id}} class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     {{#each model as |image index|}}
@@ -24,4 +24,9 @@
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+</div> --}}
+<div class="fotorama">
+  {{#each model as |image|}}
+    <img src={{image.url}} alt={{image.fileName}}>
+  {{/each}}
 </div>

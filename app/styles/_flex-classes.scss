@@ -57,13 +57,16 @@ $spacer-sizes: ('', 1), ('-double', 2), ('-half', .5), ('triple', 3);
     }
   }
 
-  &-layout {
+  &-layout,
+  &-layout-row {
     @extend .flex-display;
+  }
+
+  &-layout {
     @extend .flex-column;
   }
 
   &-layout-row {
-    @extend .flex-display;
     @extend .flex-row;
 
     height: 100%;

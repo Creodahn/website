@@ -1,41 +1,21 @@
-<div id={{modal-id}} class="modal fade {{if fireworks 'fireworks'}} {{modal-classes}}" tabindex="-1" role="dialog" aria-labelledby="{{modal-id}}-title" data-backdrop="{{if static-backdrop 'static' 'true'}}">
-  <div class="modal-dialog {{modal-dialog-classes}}" role="document">
-    <div class="modal-content {{modal-content-classes}}">
-      {{#if hide-header}}
-      {{else}}
-        <div class="modal-header">
-          {{#if static-backdrop}}
-          {{else}}
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          {{/if}}
-          {{#if modal-title}}
-            <h4 id="{{modal-id}}-title" class="modal-title {{modal-title-classes}}">{{modal-title}}</h4>
-          {{/if}}
-        </div>
-      {{/if}}
-      <form {{action "formAction" on="submit" preventDefault=true}}>
-        <div class="modal-body {{modal-body-classes}}">
-          {{yield}}
-        </div>
-        {{#if show-footer}}
-          <div class="modal-footer">
-            {{#if single-footer-button}}
-              <button type="{{if footer-button-type footer-button-type 'button'}}" class="btn btn-primary">
-                {{if footer-button-caption footer-button-caption 'OK'}}
-              </button>
-            {{else}}
-              <button id="{{modal-id}}-cancel" {{action "cancelAction"}} type="button" class="btn btn-default {{footer-cancel-classes}}">
-                {{if footer-cancel-caption footer-cancel-caption 'Cancel'}}
-              </button>
-              <button id="{{modal-id}}-ok" type="{{if footer-button-type footer-button-type 'button'}}" class="btn btn-primary {{footer-button-classes}}">
-                {{if footer-button-caption footer-button-caption 'OK'}}
-              </button>
-            {{/if}}
-          </div>
-        {{/if}}
-      </form>
-    </div>
+<div id={{id}} class="ui modal">
+  {{#if closable}}
+    <i class="close icon"></i>
+  {{/if}}
+  <header class="header">
+    {{if title title}}
+  </header>
+  <div class="content">
+    {{yield}}
   </div>
+  {{#if hasActions}}
+    <div class="actions">
+      <button id="{{id}}-cancel" class="ui deny button" {{action "cancelAction"}} type="button">
+        {{if cancel-caption cancel-caption "Cancel"}}
+      </button>
+      <button id="{{id}}-ok" class="ui positive button" {{action "okAction"}} type="button">
+        {{if ok-caption ok-caption "Ok"}}
+      </button>
+    </div>
+  {{/if}}
 </div>

@@ -20,9 +20,6 @@ export default Ember.Route.extend({
     cancel() {
       this.set('selected', this.store.createRecord('blog-post'));
     },
-    didTransition() {
-      this.controllerFor('main').set('style', 'background-image: url(assets/imgs/blog.jpg)');
-    },
     save() {
       const post = this.controller.get('selected');
 

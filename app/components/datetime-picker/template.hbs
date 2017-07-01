@@ -1,8 +1,11 @@
-<div class="form-group">
-  <label>{{label}}</label>
-  {{!-- {{bs-datetimepicker
-    date=value
-    format=format
-    openOnFocus=true
-  }} --}}
+<div class="ui calendar" id={{id}}>
+  <div class="ui fluid icon labeled input">
+    <label class="ui label">{{label}}</label>
+    {{input
+      placeholder="Date/Time"
+      type="text"
+      value=value
+    }}
+    <i class="calendar icon"></i>
+  </div>
 </div>

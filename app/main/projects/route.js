@@ -39,9 +39,6 @@ export default Ember.Route.extend({
   },
   //  actions
   actions: {
-    didTransition() {
-      this.controllerFor('main').set('style', 'background-image: url(assets/imgs/project.jpg)');
-    },
     imageUpload(results) {
       const imagable = this.controller.get('selected');
 

@@ -23,9 +23,6 @@ export default Ember.Route.extend({
     cancel() {
       this.set('selected', this.store.createRecord('education'));
     },
-    didTransition() {
-      this.controllerFor('main').set('style', 'background-image: url(assets/imgs/education.jpg)');
-    },
     save() {
       const ed = this.controller.get('selected');
 

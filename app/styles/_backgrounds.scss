@@ -1,0 +1,25 @@
+.background {
+  &-about-me {
+    background-image: url('imgs/about-me.jpg');
+  }
+
+  &-blog {
+    background-image: url('imgs/blog.jpg');
+  }
+
+  &-education {
+    background-image: url('imgs/education.jpg');
+  }
+
+  &-project {
+    background-image: url('imgs/project.jpg');
+  }
+
+  &-skill {
+    background-image: url('imgs/skills.jpg');
+  }
+
+  &-work-experience {
+    background-image: url('imgs/work.jpg');
+  }
+}

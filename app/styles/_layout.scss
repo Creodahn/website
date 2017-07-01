@@ -7,20 +7,13 @@
   width: 100%;
 }
 
-.content {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  width: 100vw;
+.content -section {
+  position: relative;
+  text-align: center;
 
-  &-section {
-    position: relative;
-    text-align: center;
-
-    //  &:nth-child(odd) {
-    //    @include box-shadow($shadow);
-    //  }
-  }
+  //  &:nth-child(odd) {
+  //    @include box-shadow($shadow);
+  //  }
 }
 
 .page-footer {

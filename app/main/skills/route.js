@@ -24,9 +24,6 @@ export default Ember.Route.extend({
   },
   //  actions
   actions: {
-    didTransition() {
-      this.controllerFor('main').set('style', 'background-image: url(assets/imgs/skills.jpg)');
-    },
     remove(skill) {
       skill.destroyRecord();
 

@@ -1,85 +1,84 @@
-{{#if isAuthenticated}}
-  <div class="bottom-spacer flex-row right">
-    <button id="modal-toggle" type="button" class="btn" data-toggle="modal" data-target="#project-editor">
-      Edit
-    </button>
-  </div>
-{{/if}}
+<div class="background-project fixed-height">
+  {{#if isAuthenticated}}
+    <div class="bottom-spacer flex-row right">
+      <button id="modal-toggle" type="button" class="btn" data-toggle="modal" data-target="#project-editor">
+        Edit
+      </button>
+    </div>
+  {{/if}}
 
-{{#each sortedProjects as |project|}}
-  {{project-item
-    isAuthenticated=isAuthenticated
-    model=project
-    select="select"
-    selectImages="selectImages"
-  }}
-{{/each}}
-
-{{#modal-window
-  flex-modal=true
-  modal-id="image-modal"
-  modal-title=modal-title
-}}
-  {{image-carousel
-    carousel-id="image-carousel"
-    model=images
-  }}
-{{/modal-window}}
-
-{{#if isAuthenticated}}
-  {{#modal-window
-    close-on-action=true
-    flex-modal=true
-    footer-button-caption="Save"
-    footer-button-type="submit"
-    modal-id="project-editor"
-    modal-title="Project Editor"
-    show-footer=true
-    cancelAction="cancel"
-    formAction="save"
-  }}
-    <section class="flex-display flex-row">
-      <div class="flex-column flex-display flex-spacer side-padding">
-        {{text-input
-          label="Project Name"
-          value=selected.name
-        }}
-      </div>
-      <div class="flex-column flex-display flex-spacer side-padding">
-        {{text-input
-          label="Project URL"
-          value=selected.url
-        }}
-      </div>
-    </section>
-
-    <section class="flex-display flex-row">
-      <div class="flex-column flex-display flex-spacer side-padding">
-        {{datetime-picker
-          format="MM/YYYY"
-          label="Started"
-          value=selected.started
-        }}
-      </div>
-      <div class="flex-column flex-display flex-spacer side-padding">
-        {{datetime-picker
-          format="MM/YYYY"
-          label="Ended"
-          value=selected.ended
-        }}
-      </div>
-    </section>
-
-    {{filestack-upload
-      label="Upload Screenshots"
-      options=pickOptions
-
-      upload="imageUpload"
+  {{#each sortedProjects as |project|}}
+    {{project-item
+      isAuthenticated=isAuthenticated
+      model=project
+      select="select"
+      selectImages="selectImages"
     }}
+  {{/each}}
 
-    {{wysiwyg-editor
-      label="Description"
-      content=selected.description
+  {{#modal-window
+    flex-modal=true
+    id="image-modal"
+    title=modal-title
+  }}
+    {{image-carousel
+      carousel-id="image-carousel"
+      model=images
     }}
   {{/modal-window}}
-{{/if}}
+
+  {{#if isAuthenticated}}
+    {{#modal-window
+      footer-button-caption="Save"
+      footer-button-type="submit"
+      id="project-editor"
+      title="Project Editor"
+      cancelAction="cancel"
+      formAction="save"
+    }}
+      <section class="flex-display flex-row">
+        <div class="flex-column flex-display flex-spacer side-padding">
+          {{text-input
+            label="Project Name"
+            value=selected.name
+          }}
+        </div>
+        <div class="flex-column flex-display flex-spacer side-padding">
+          {{text-input
+            label="Project URL"
+            value=selected.url
+          }}
+        </div>
+      </section>
+
+      <section class="flex-display flex-row">
+        <div class="flex-column flex-display flex-spacer side-padding">
+          {{datetime-picker
+            format="MM/YYYY"
+            label="Started"
+            value=selected.started
+          }}
+        </div>
+        <div class="flex-column flex-display flex-spacer side-padding">
+          {{datetime-picker
+            format="MM/YYYY"
+            label="Ended"
+            value=selected.ended
+          }}
+        </div>
+      </section>
+
+      {{filestack-upload
+        label="Upload Screenshots"
+        options=pickOptions
+
+        upload="imageUpload"
+      }}
+
+      {{wysiwyg-editor
+        label="Description"
+        content=selected.description
+      }}
+    {{/modal-window}}
+  {{/if}}
+</div>
