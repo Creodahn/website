@@ -1,25 +1,42 @@
 .background {
+  border-top: 2px solid #e8b71a;
+  height: auto;
+  overflow: auto;
+  padding: 10px;
+
   &-about-me {
+    @extend .background;
+
     background-image: url('imgs/about-me.jpg');
   }
 
   &-blog {
+    @extend .background;
+
     background-image: url('imgs/blog.jpg');
   }
 
   &-education {
+    @extend .background;
+
     background-image: url('imgs/education.jpg');
   }
 
   &-project {
+    @extend .background;
+
     background-image: url('imgs/project.jpg');
   }
 
   &-skill {
+    @extend .background;
+
     background-image: url('imgs/skills.jpg');
   }
 
   &-work-experience {
+    @extend .background;
+
     background-image: url('imgs/work.jpg');
   }
 }

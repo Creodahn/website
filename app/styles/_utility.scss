@@ -103,13 +103,6 @@ $spacings: ('-lg', 20px), ('-sm', 5px), ('-tiny', 1px), ('', 10px);
   }
 }
 
-.fixed-height {
-  border-top: 2px solid $vivid-yellow;
-  height: 100%;
-  overflow: auto;
-  padding: 10px;
-}
-
 .hidden {
   display: none;
 }

@@ -209,7 +209,7 @@ main {
       }
     }
 
-    &.item {
+    & > .item {
       &.btn-contact {
         padding: 15px;
 
