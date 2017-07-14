@@ -11,7 +11,9 @@ Router.map(function() {
   //  this.route('error');
   this.route('loading');
   this.route('main', { path: '/' }, function() {
-    this.route('about-me');
+    this.route('about-me', function() {
+      this.route('resume-viewer');
+    });
     this.route('education');
     this.route('loading');
     this.route('work-experience');

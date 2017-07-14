@@ -1,25 +1,30 @@
-<section class="contact-me">
-  <article class="info">
-    <h2 class="bold header">Contact Me</h2>
-    <div class="body">
-      <h3 class="bold center">If you like what you see on my website, let me know!</h3>
-      <ul class="nav nav-pills nav-stacked">
-        {{#if model.email}}
-          <li>
-            <a href="mailto:{{model.email}}" class="btn btn-contact btn-email">Send Me an Email!</a>
-          </li>
-        {{/if}}
-        {{#if model.linkedin}}
-          <li>
-            <a href={{model.linkedin}} target="_blank" class="btn btn-contact btn-linkedin">See My Profile!</a>
-          </li>
-        {{/if}}
-        {{#if model.resumeUrl}}
-          <li>
-            <a  href={{model.resumeUrl}} target="_blank" class="btn btn-contact">View My Formal Resume!</a>
-          </li>
-        {{/if}}
-      </ul>
+<article class="ui card">
+  <div class="content">
+    <h2 class="header">Contact Me</h2>
+    <div class="meta">
+      <span class="date">
+        If you like what you see on my website, let me know!
+      </span>
     </div>
-  </article>
-</section>
+    <nav class="ui list">
+      {{#if model.email}}
+        <a href="mailto:{{model.email}}" class="btn btn-contact item">
+          <i class="mail outline icon"></i>
+          <div class="content">Send Me an Email!</div>
+        </a>
+      {{/if}}
+      {{#if model.linkedin}}
+        <a href={{model.linkedin}} target="_blank" class="btn btn-contact item">
+          <i class="linkedin icon"></i>
+          <div class="content">See My Profile!</div>
+        </a>
+      {{/if}}
+      {{#if model.resumeUrl}}
+        {{#link-to "main.about-me.resume-viewer" model class="btn btn-contact item" tagName="button"}}
+          <i class="file outline icon"></i>
+          <div class="content">View My Formal Resume!</div>
+        {{/link-to}}
+      {{/if}}
+    </nav>
+  </div>
+</article>

@@ -1,24 +1,18 @@
-<section class="about-me">
-  {{#if model.profilePicture}}
-    <figure class="profile-picture-container">
-      <img src="{{model.profilePicture.url}}" alt="{{model.profilePicture.fileName}}" />
-    </figure>
-  {{/if}}
+<article class="ui card">
+  <div class="content">
+    <h2 class="header">Who Am I?</h2>
+  </div>
+  <figure class="image">
+    <img src="{{if model.profilePicture model.profilePicture.url}}" alt="{{model.profilePicture.fileName}}" />
+  </figure>
 
-  <article class="info">
-    <h2 class="bold text-container title">Who Am I?</h2>
-    <div class="details text-container">
-      <dl>
-        <dt>Name:</dt>
-        <dd>{{model.name}}</dd>
-        <dt>Age:</dt>
-        <dd>{{model.age}}</dd>
-        <dt>From:</dt>
-        <dd>{{model.location}}</dd>
-      </dl>
+  <div class="content">
+    <h3 class="header">{{model.name}}</h3>
+    <div class="meta">
+      <span class="date">{{model.location}}</span>
     </div>
-    <div class="bio text-container">
+    <div class="description">
       {{model.description}}
     </div>
-  </article>
-</section>
+  </div>
+</article>

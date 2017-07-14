@@ -6,7 +6,7 @@
       </button>
     </div>
   {{/if}}
-  <div class="flex-layout-row">
+  <div class="ui cards flex-center">
     {{#if model}}
       {{about-me
         model=model
@@ -37,13 +37,6 @@
         value=model.title
       }}
 
-      {{filestack-upload
-        label="Upload Profile Picture"
-        options=profilePickOptions
-
-        upload="uploadProfilePic"
-      }}
-
       {{text-input
         label="Email"
         placeholder="Email"
@@ -56,13 +49,6 @@
         value=model.linkedin
       }}
 
-      {{filestack-upload
-        label="Upload Resume"
-        options=resumePickOptions
-
-        upload="uploadResume"
-      }}
-
       {{text-input
         label="Location"
         placeholder="Location"
@@ -73,8 +59,23 @@
         format="MM/DD/YYYY"
         id="birth-date"
         label="Birth Date"
-        value=selected.birthDate
+        value=(moment-format model.birthDate "MM/DD/YYYY")
+      }}
+
+      {{filestack-upload
+        label="Upload Profile Picture"
+        options=profilePickOptions
+
+        upload="uploadProfilePic"
+      }}
+
+      {{filestack-upload
+        label="Upload Resume"
+        options=resumePickOptions
+
+        upload="uploadResume"
       }}
     {{/modal-window}}
   {{/if}}
 </div>
+{{outlet}}

@@ -1,22 +1,4 @@
 /* Buttons */
-.nav-pills {
-  & > li {
-    & > a {
-      &.btn-contact {
-        &:hover {
-          background-color: $black;
-          color: $vivid-yellow;
-        }
-
-        &:active,
-        &:focus {
-          background-color: $strong-yellow;
-          color: $black;
-        }
-      }
-    }
-  }
-}
 .btn {
   &-close {
     @include box-shadow($shadow);
