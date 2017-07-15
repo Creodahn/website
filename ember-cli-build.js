@@ -26,6 +26,15 @@ module.exports = function(defaults) {
   // Chartjs
   app.import('bower_components/Chart.js/dist/Chart.min.js');
 
+  // font-awesome
+  app.import('bower_components/font-awesome/css/font-awesome.min.css');
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot');
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg');
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf');
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff');
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff2');
+  app.import('bower_components/font-awesome/fonts/FontAwesome.otf');
+
   // jQuery UI
   app.import('bower_components/jquery-ui/themes/base/jquery-ui.min.css');
   app.import('bower_components/jquery-ui/jquery-ui.min.js');

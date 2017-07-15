@@ -10,9 +10,6 @@ export default Ember.Controller.extend({
     save() {
       this.get('model').save();
     },
-    showModal() {
-      $('#profile-editor').modal('show');
-    },
     uploadProfilePic(results) {
       if(results[0]) {
         const result = results[0];

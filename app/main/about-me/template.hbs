@@ -1,11 +1,4 @@
 <div class="background-about-me fixed-height">
-  {{#if isAuthenticated}}
-    <div class="flex-row right">
-      <button type="button" class="ui button" {{action "showModal"}}>
-        Edit
-      </button>
-    </div>
-  {{/if}}
   <div class="ui cards flex-center">
     {{#if model}}
       {{about-me

@@ -2,13 +2,13 @@ import Ember from 'ember';
 import ENV from 'personal-website/config/environment';
 
 export default Ember.Controller.extend({
-  //  attributes
+  // attributes
   fullTitle: true,
-  //  hooks
+  // hooks
   init() {
     this.set('environment', ENV.environment);
   },
-  //  actions
+  // actions
   actions: {
     alterTitle() {
       $('.title-card').switchClass('content-section title-card', 'container small-title');

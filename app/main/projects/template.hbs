@@ -1,12 +1,4 @@
 <div class="background-project fixed-height">
-  {{#if isAuthenticated}}
-    <div class="bottom-spacer flex-row right">
-      <button id="modal-toggle" type="button" class="btn" data-toggle="modal" data-target="#project-editor">
-        Edit
-      </button>
-    </div>
-  {{/if}}
-
   <section class="ui cards flex-center">
     {{#each sortedProjects as |project|}}
       {{project-item
@@ -18,25 +10,13 @@
     {{/each}}
   </section>
 
-  {{#modal-window
-    flex-modal=true
-    id="image-modal"
-    title=modal-title
-  }}
-    {{image-carousel
-      carousel-id="image-carousel"
-      model=images
-    }}
-  {{/modal-window}}
-
   {{#if isAuthenticated}}
     {{#modal-window
-      footer-button-caption="Save"
-      footer-button-type="submit"
+      button-caption="Save"
+      hasActions=true
       id="project-editor"
       title="Project Editor"
-      cancelAction="cancel"
-      formAction="save"
+      okAction="save"
     }}
       <section class="flex-display flex-row">
         <div class="flex-column flex-display flex-spacer side-padding">
@@ -83,4 +63,14 @@
       }}
     {{/modal-window}}
   {{/if}}
+
+  {{#modal-window
+    id="image-modal"
+    title=modal-title
+  }}
+    {{image-carousel
+      carousel-id="image-carousel"
+      model=images
+    }}
+  {{/modal-window}}
 </div>

@@ -21,6 +21,7 @@
   {{/if}}
   <div class="right menu">
     {{#if isAuthenticated}}
+      <a class="item" {{action "showModal"}} href="">Edit</a>
       <a class="item" {{action "logout"}} href="">Log Out</a>
     {{else}}
       <a class="item" {{action "login"}} href="">Log In</a>

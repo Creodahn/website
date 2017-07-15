@@ -1,12 +1,4 @@
 <div class="background-skill fixed-height">
-  {{#if isAuthenticated}}
-    <div class="bottom-spacer flex-row right">
-      <button id="modal-toggle" type="button" class="btn" data-toggle="modal" data-target="#education-editor">
-        Edit
-      </button>
-    </div>
-  {{/if}}
-
   {{skill-chart
     chart-id="skills"
     model=sortedSkills
@@ -14,11 +6,8 @@
 
   {{#if isAuthenticated}}
     {{#modal-window
-      close-on-action=false
-      flex-modal=true
-      modal-id="education-editor"
-      modal-title="Education Editor"
-      show-footer=false
+      id="education-editor"
+      title="Education Editor"
     }}
       <div class="flex-center flex-display flex-row">
         <div class="flex-display flex-spacer">

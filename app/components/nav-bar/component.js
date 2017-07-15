@@ -1,4 +1,5 @@
 import Ember from 'ember';
+// const { log } = Ember.Logger;
 
 export default Ember.Component.extend({
   //  attributes
@@ -18,6 +19,10 @@ export default Ember.Component.extend({
     },
     logout() {
       this.sendAction('logout');
+    },
+    showModal() {
+      const currentModal = $('.ui.modal').get(0);
+      $(currentModal).modal('show');
     }
   }
 });
