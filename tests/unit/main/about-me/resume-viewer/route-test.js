@@ -6,6 +6,6 @@ moduleFor('route:main/about-me/resume-viewer', 'Unit | Route | main/about me/res
 });
 
 test('it exists', function(assert) {
-  let route = this.subject();
+  const route = this.subject();
   assert.ok(route);
 });

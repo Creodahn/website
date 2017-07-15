@@ -7,14 +7,16 @@
     </div>
   {{/if}}
 
-  {{#each sortedProjects as |project|}}
-    {{project-item
-      isAuthenticated=isAuthenticated
-      model=project
-      select="select"
-      selectImages="selectImages"
-    }}
-  {{/each}}
+  <section class="ui cards flex-center">
+    {{#each sortedProjects as |project|}}
+      {{project-item
+        isAuthenticated=isAuthenticated
+        model=project
+        select="select"
+        selectImages="selectImages"
+      }}
+    {{/each}}
+  </section>
 
   {{#modal-window
     flex-modal=true

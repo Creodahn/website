@@ -1,0 +1,10 @@
+<div class="item">
+  <div class="content">
+    {{#link-to "main.blog.post" model.id class="header"}}
+      {{model.title}}
+    {{/link-to}}
+    <div class="meta">
+      <span class="date">{{moment-format model.createdAt "M/D/YY, h:mm a"}}</span>
+    </div>
+  </div>
+</div>

@@ -7,13 +7,15 @@
     </div>
   {{/if}}
 
-  {{#each sortedWork as |experience|}}
-    {{work-experience
-      isAuthenticated=isAuthenticated
-      model=experience
-      select="select"
-    }}
-  {{/each}}
+  <div class="ui cards flex-center">
+    {{#each sortedWork as |experience|}}
+      {{work-experience
+        isAuthenticated=isAuthenticated
+        model=experience
+        select="select"
+      }}
+    {{/each}}
+  </div>
 
   {{#if isAuthenticated}}
     {{#modal-window

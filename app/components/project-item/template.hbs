@@ -1,38 +1,35 @@
-<article class="project-item">
-  <div class="col-xs-12">
-    <div class="bold title">
+<article class="ui card">
+  <div class="content">
+    <h2 class="header">
       {{#if model.url}}
         <a href={{model.url}} target="_blank">{{model.name}}</a>
       {{else}}
         {{model.name}}
       {{/if}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4">
-      <div class="sub-title">
+    </h2>
+    <div class="meta">
+      <span class="date">
         {{moment-format model.started "MMMM YYYY"}} to
         {{#if model.ended}}
           {{moment-format model.ended "MMMM YYYY"}}
         {{else}}
           Present
         {{/if}}
-      </div>
-      {{#if isAuthenticated}}
-        <div class="center">
-          <button {{action "select"}} class="btn">Edit</button>
-        </div>
-      {{/if}}
-      {{#if model.images}}
-        {{photo-stack
-          modal-id=modalId
-          model=model.images
-          title=title
-          selectImages="selectImages"
-        }}
-      {{/if}}
+      </span>
     </div>
-    <div class="col-xs-8">
+  </div>
+  <figure class="image">
+    {{#if model.images}}
+      {{photo-stack
+        modal-id=modalId
+        model=model.images
+        title=title
+        selectImages="selectImages"
+      }}
+    {{/if}}
+  </figure>
+  <div class="content">
+    <div class="description">
       {{{model.description}}}
       {{#if model.skills}}
         <div>

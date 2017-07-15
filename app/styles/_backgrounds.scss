@@ -1,8 +1,13 @@
 .background {
+  @extend .flex-center;
+  @extend .flex-display;
+
   border-top: 2px solid #e8b71a;
   height: auto;
+  min-height: 50vh;
   overflow: auto;
   padding: 10px;
+  position: relative;
 
   &-about-me {
     @extend .background;

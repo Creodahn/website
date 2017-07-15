@@ -239,38 +239,37 @@
 }
 
 @mixin scrolling-shadows-horizontal {
+  /*  Opera doesn't support this in the shorthand  */
+  background-attachment: local, local, scroll, scroll;
+  background-color: #fff;
   background-image:
-    /*  Shadows  */
-    linear-gradient(to right, #fff, #fff),
-    linear-gradient(to right, #fff, #fff),
-    /*  Shadow covers  */
-    linear-gradient(to right, rgba(0,0,0,.25), rgba(255,255,255,0)),
-    linear-gradient(to left, rgba(0,0,0,.25), rgba(255,255,255,0));
+  /*  Shadows  */
+  linear-gradient(to right, #fff, #fff),
+  linear-gradient(to right, #fff, #fff),
+  /*  Shadow covers  */
+  linear-gradient(to right, rgba(0, 0, 0, .25), rgba(255, 255, 255, 0)),
+  linear-gradient(to left, rgba(0, 0, 0, .25), rgba(255, 255, 255, 0));
 
   background-position: left center, right center, left center, right center;
-	background-repeat: no-repeat;
-	background-color: #fff;
-	background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
-
-	/*  Opera doesn't support this in the shorthand  */
-	background-attachment: local, local, scroll, scroll;
+  background-repeat: no-repeat;
+  background-size: 20px 100%, 20px 100%, 10px 100%, 10px 100%;
 }
 
 @mixin scrolling-shadows-vertical {
   background:
-		/*  Shadow covers  */
-		linear-gradient(#fff 30%, rgba(255,255,255,0)),
-		linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%,
-		/*  Shadows  */
-		radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
-		radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-	background:
-		/*  Shadow covers  */
-		linear-gradient(#fff 30%, rgba(255,255,255,0)),
-		linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%,
-		/*  Shadows  */
-		radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
-		radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+  /*  Shadow covers  */
+  linear-gradient(#fff 30%, rgba(255, 255, 255, 0)),
+  linear-gradient(rgba(255, 255, 255, 0), #fff 70%) 0 100%,
+  /*  Shadows  */
+  radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+  radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
+  background:
+  /*  Shadow covers  */
+  linear-gradient(#fff 30%, rgba(255, 255, 255, 0)),
+  linear-gradient(rgba(255, 255, 255, 0), #fff 70%) 0 100%,
+  /*  Shadows  */
+  radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)),
+  radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
   background-attachment: local, local, scroll, scroll;
   background-color: #fff;
   background-repeat: no-repeat;

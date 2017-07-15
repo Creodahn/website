@@ -19,7 +19,9 @@ Router.map(function() {
     this.route('work-experience');
     this.route('skills');
     this.route('projects');
-    this.route('blog');
+    this.route('blog', function() {
+      this.route('post', { path: '/post/:post_id' });
+    });
   });
   this.route('login');
 });

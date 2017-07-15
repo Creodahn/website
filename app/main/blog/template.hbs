@@ -1,4 +1,4 @@
-<div class="blog-background fixed-height">
+<div class="background-blog fixed-height">
   {{#if isAuthenticated}}
     <div class="bottom-spacer flex-row right">
       <button id="modal-toggle" type="button" class="btn" data-toggle="modal" data-target="#blog-editor">
@@ -7,12 +7,13 @@
     </div>
   {{/if}}
 
-  {{#each model as |post|}}
-    {{blog-post
-      post=post
-      select="select"
-    }}
-  {{/each}}
+  <div class="ui middle aligned animated divided list">
+    {{#each sortedBlogPosts as |post|}}
+      {{blog-post-list-item
+        model=post
+      }}
+    {{/each}}
+  </div>
 
   {{#if isAuthenticated}}
     {{#modal-window
