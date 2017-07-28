@@ -22,11 +22,13 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       session.set('data.login', username);
 
       //  Authenticate
-      session.authenticate('authenticator:oauth2', username, password).catch((function(reason) {
+      session.authenticate('authenticator:oauth2', username, password).then(() => {
+        this.transitionTo('main.about-me');
+      }).catch((reason) => {
         const reasonObj = JSON.parse(reason);
 
         ctrl.set('error', (reasonObj.errors[0] ? reasonObj.errors[0].detail : this.get('genericError')));
-      }).bind(this));
+      });
     },
     cancel() {
       this.transitionTo('main.about-me');

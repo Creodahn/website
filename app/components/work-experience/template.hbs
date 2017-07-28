@@ -7,9 +7,7 @@
         {{model.company}}
       {{/if}}
       {{#if isAuthenticated}}
-        <div class="center">
-          <button {{action "select"}} class="btn">Edit</button>
-        </div>
+        <button {{action "select"}} class="ui button">Edit</button>
       {{/if}}
     </h2>
     <div class="meta">

@@ -3,8 +3,8 @@
   @extend .flex-display;
 
   border-top: 2px solid #e8b71a;
-  height: 50vh;
   justify-content: center;
+  min-height: 50vh;
   overflow: auto;
   padding: 10px;
   position: relative;

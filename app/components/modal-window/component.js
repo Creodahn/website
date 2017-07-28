@@ -12,6 +12,7 @@ export default Ember.Component.extend({
       const id = `#${this.get('id')}`;
 
       $(id).modal({
+        closable: this.get('closable') ? this.get('closable') : false,
         onHidden: () => {
           this.sendAction('modalClosed');
         }
@@ -21,5 +22,13 @@ export default Ember.Component.extend({
         $(id).modal('show');
       }
     });
+  },
+  actions: {
+    cancelAction() {
+      this.sendAction('cancelAction');
+    },
+    okAction() {
+      this.sendAction('okAction');
+    }
   }
 });

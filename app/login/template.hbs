@@ -1,34 +1,21 @@
 <div class="main">
   {{#modal-window
-    close-on-action=false
-    fireworks=false
-    flex-modal=true
-    footer-button-label="Submit"
-    footer-button-type="submit"
+    hasActions=true
     modal-classes="login-modal login"
-    modal-id="login-modal"
-    modal-title="Login"
-    show-footer=true
-    show-on-transition=true
-    static-backdrop=true
+    id="login-modal"
+    showOnTransition=true
+    title="Login"
     cancelAction="cancel"
-    formAction="authenticate"
+    okAction="authenticate"
   }}
-    {{input
-      class="form-control"
-      type="text"
-      label-class="float-left"
-      name="username"
+    {{text-input
+      container-classes="bottom-spacer"
+      label="Username"
       value=username
-      placeholder="Username"
     }}
-    <br/>
-    {{input
-      class="form-control"
+    {{text-input
+      label="Password"
       type="password"
-      placeholder="Password"
-      label-class="float-left"
-      name="password"
       value=password
     }}
     <div class="top-spacer">

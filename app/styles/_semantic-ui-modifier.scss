@@ -117,12 +117,18 @@ main {
 
   &.card {
     & > .content {
+      @include display-flex;
+      @include flex(1);
+      @include flex-direction(column);
+
       & > .description {
+        @include display-flex
+        @include flex(1);
+        @include flex-direction(column);
         @include scrolling-shadows-vertical;
 
         border-bottom: 1px solid $vivid-yellow;
         border-top: 1px solid $vivid-yellow;
-        max-height: 100px;
         overflow-x: hidden;
         overflow-y: auto;
         padding: 4px;

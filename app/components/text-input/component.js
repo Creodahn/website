@@ -1,5 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  tagName: ''
+  // attributes
+  tagName: '',
+  // lifecycle
+  didInsertElement() {
+    if(!this.get('type')) {
+      this.set('type', 'text');
+    }
+  }
 });

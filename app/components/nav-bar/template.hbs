@@ -1,4 +1,4 @@
-<nav class="ui pointing menu">
+<nav class="ui {{if isSmall "vertical" ""}} pointing menu">
   {{#link-to "main.about-me" class="item"}}
     About Me
   {{/link-to}}
@@ -19,12 +19,21 @@
       Blog Posts
     {{/link-to}}
   {{/if}}
-  <div class="right menu">
+  {{#if isSmall}}
     {{#if isAuthenticated}}
       <a class="item" {{action "showModal"}} href="">Edit</a>
       <a class="item" {{action "logout"}} href="">Log Out</a>
     {{else}}
       <a class="item" {{action "login"}} href="">Log In</a>
     {{/if}}
-  </div>
+  {{else}}
+    <div class="right menu">
+      {{#if isAuthenticated}}
+        <a class="item" {{action "showModal"}} href="">Edit</a>
+        <a class="item" {{action "logout"}} href="">Log Out</a>
+      {{else}}
+        <a class="item" {{action "login"}} href="">Log In</a>
+      {{/if}}
+    </div>
+  {{/if}}
 </nav>
