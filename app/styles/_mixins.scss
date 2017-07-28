@@ -116,18 +116,18 @@
 
 @mixin display-flex {
   @if $use-old-webkit == true {
-    display: #{$webkit}box;
+    display: #{$webkit}box !important;
   }
 
   @if $use-webkit == true {
-    display: #{$webkit}flex;
+    display: #{$webkit}flex !important;
   }
 
   @if $use-ms == true {
-    display: #{$ms}flexbox;
+    display: #{$ms}flexbox !important;
   }
 
-  display: flex;
+  display: flex !important;
 }
 
 @mixin display-inline-flex {

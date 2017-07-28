@@ -20,7 +20,7 @@ Router.map(function() {
     this.route('skills');
     this.route('projects');
     this.route('blog', function() {
-      this.route('post', { path: '/post/:post_id' });
+      this.route('post', { path: '/post/:blog-post_id' });
     });
   });
   this.route('login');

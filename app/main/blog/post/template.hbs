@@ -1,1 +1,11 @@
-{{outlet}}
+<div>
+  {{#modal-window
+    closable=true
+    id="blog-modal"
+    title=model.title
+    showOnTransition=true
+    modalClosed="modalClosed"
+  }}
+    {{{model.content}}}
+  {{/modal-window}}
+</div>

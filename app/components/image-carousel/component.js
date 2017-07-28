@@ -1,9 +1,13 @@
 import Ember from 'ember';
+// const { log } = Ember.Logger;
 
 export default Ember.Component.extend({
+  // attributes
   tagName: '',
-  // computed properties
-  target: Ember.computed('carousel-id', function() {
-    return `#${this.get('carousel-id')}`;
-  })
+  // lifecycle
+  didInsertElement() {
+    Ember.run.scheduleOnce('afterRender', () => {
+      $('.fotorama').fotorama();
+    });
+  }
 });

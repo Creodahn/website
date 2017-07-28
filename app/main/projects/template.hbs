@@ -65,12 +65,16 @@
   {{/if}}
 
   {{#modal-window
+    closable=true
     id="image-modal"
     title=modal-title
+    modalClosed="modalClosed"
   }}
-    {{image-carousel
-      carousel-id="image-carousel"
-      model=images
-    }}
+    {{#if images}}
+      {{image-carousel
+        carousel-id="image-carousel"
+        model=images
+      }}
+    {{/if}}
   {{/modal-window}}
 </div>

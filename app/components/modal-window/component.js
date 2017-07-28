@@ -1,27 +1,25 @@
 import Ember from 'ember';
-//  const log = Ember.Logger.log;
+// const log = Ember.Logger.log;
 
 export default Ember.Component.extend({
-  //  attributes
+  // attributes
   tagName: '',
-  //  hooks
-  didRender() {
-    const id = `#${this.get('id')}`;
+  // lifecycle
+  didInsertElement() {
+    this._super();
 
-    if(this.get('show-on-transition')) {
-      $(id).modal('show');
-    }
-  },
-  //  actions
-  actions: {
-    cancelAction() {
-      this.sendAction('cancelAction');
-    },
-    formAction() {
-      this.sendAction('formAction');
-      if(this.get('single-footer-button') || this.get('close-on-action')) {
-        $(`#${this.get('id')}`).modal('hide');
+    Ember.run.scheduleOnce('afterRender', () => {
+      const id = `#${this.get('id')}`;
+
+      $(id).modal({
+        onHidden: () => {
+          this.sendAction('modalClosed');
+        }
+      });
+
+      if(this.get('showOnTransition')) {
+        $(id).modal('show');
       }
-    }
+    });
   }
 });

@@ -57,6 +57,9 @@ export default Ember.Route.extend({
         }
       }).bind(this));
     },
+    modalClosed() {
+      this.controller.set('images', null);
+    },
     save() {
       const project = this.controller.get('selected');
 
