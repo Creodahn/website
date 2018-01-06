@@ -6,7 +6,7 @@ export default Ember.Component.extend({
   // hooks
   didInsertElement() {
     Ember.run.scheduleOnce('afterRender', (function() {
-      this.set('client', filestack.init('ACUeLE17FQ2OeYH7cxPEHz'));
+      this.set('client', filestack.init('AGfPm0pN1Q3SY6LVzGqvKz'));
     }).bind(this));
   },
   didReceiveAttrs() {
