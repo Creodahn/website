@@ -37,7 +37,7 @@ export default Ember.Route.extend({
 
         Ember.RSVP.Promise.resolve(this.get('sessionAccount.profile')).then((function(person) {
           this.store.createRecord('image', {
-            fileName: result.name,
+            fileName: result.filename,
             url: result.url,
             uploader: person
           }).save().then((function(image) {

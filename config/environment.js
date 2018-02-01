@@ -52,7 +52,7 @@ module.exports = function(environment) {
     // Testem prefers this...
     ENV.rootURL = '/';
     ENV.locationType = 'none';
-    ENV.APP.apiURL = 'http://localhost:3000';
+    // ENV.APP.apiURL = 'http://localhost:3000';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
