@@ -23,3 +23,8 @@ install:
 
 script:
   - ember build --prod
+deploy:
+  provider: surge
+  project: ./dist
+  domain: justinadrew.com
+  on: master
