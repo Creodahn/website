@@ -47,7 +47,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^2.0.0",
     "ember-font-awesome": "3.1.1",
-    "ember-froala-editor": "2.7.5",
+    "ember-froala-editor": "2.9.3",
     "ember-load-initializers": "^1.0.0",
     "ember-moment": "7.6.0",
     "ember-resolver": "^4.5.0",
