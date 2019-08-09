@@ -50,7 +50,7 @@
     "ember-froala-editor": "2.7.5",
     "ember-load-initializers": "^1.0.0",
     "ember-moment": "7.6.0",
-    "ember-resolver": "^4.5.0",
+    "ember-resolver": "^5.2.1",
     "ember-simple-auth": "^1.1.0",
     "ember-source": "^2.11.0",
     "eonasdan-bootstrap-datetimepicker": "^4.17.46",
